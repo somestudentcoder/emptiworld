@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
     public Vector2 speed = new Vector2(10, 10);
     public bool interactPossible = false;
     public InteractScript interactor;
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +22,8 @@ public class PlayerScript : MonoBehaviour
         GameObject camera = GameObject.Find("Main Camera");
         camera.transform.Translate(movement);
 
+
+        //If in range of an interactable object, give the possibility to interact.
         if(interactPossible)
         {
             bool pressed = Input.GetButtonDown("Fire1");

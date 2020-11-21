@@ -23,6 +23,7 @@ public class InteractScript : MonoBehaviour
 
     public void interact()
     {
+        //Sample functionality -> changing sprite.
         if(currentSprite == 1)
         {
             currentSprite -= 1;
