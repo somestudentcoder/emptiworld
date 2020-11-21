@@ -27,18 +27,16 @@ public class PlayerScript : MonoBehaviour
         GameObject camera = GameObject.Find("Main Camera");
         if (transform.position.x > minX && transform.position.x < maxX && transform.position.y > minY && transform.position.y < maxY)
         {
-            camera.transform.Translate(movement);
+            camera.transform.position = new Vector3(transform.position[0], transform.position[1], camera.transform.position[2]);
         }
         else if (transform.position.x > minX && transform.position.x < maxX)
         {
-            movement.y = 0;
-            camera.transform.Translate(movement);
+            camera.transform.position = new Vector3(transform.position[0], camera.transform.position[1], camera.transform.position[2]);
 
         }
         else if (transform.position.y > minY && transform.position.y < maxY)
         {
-            movement.x = 0;
-            camera.transform.Translate(movement);
+            camera.transform.position = new Vector3(camera.transform.position[0], transform.position[1], camera.transform.position[2]);
         }
 
 
