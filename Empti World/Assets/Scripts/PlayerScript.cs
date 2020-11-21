@@ -8,36 +8,36 @@ public class PlayerScript : MonoBehaviour
     public bool interactPossible = false;
     public InteractScript interactor;
 
-    public float minX = -3.1f;
-    public float maxX = 5.1f;
-    public float minY = -2f;
-    public float maxY = 2f;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
 
+    private float offsetPlayer = 0.5f;
 
+    private float halfheight; 
+    private float halfwidth;
+
+    private Rigidbody2D rigiBody;
+    private Vector3 movement;
+    private Camera mainCamera;
+
+    void Start()
+    {
+        if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();
+
+        halfheight = Camera.main.orthographicSize;
+        halfwidth =  halfheight * Camera.main.aspect;
+
+        mainCamera = Camera.main;
+    }
     // Update is called once per frame
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
-
-        movement *= Time.deltaTime;
-        transform.Translate(movement);
-        GameObject camera = GameObject.Find("Main Camera");
-        if (transform.position.x > minX && transform.position.x < maxX && transform.position.y > minY && transform.position.y < maxY)
-        {
-            camera.transform.position = new Vector3(transform.position[0], transform.position[1], camera.transform.position[2]);
-        }
-        else if (transform.position.x > minX && transform.position.x < maxX)
-        {
-            camera.transform.position = new Vector3(transform.position[0], camera.transform.position[1], camera.transform.position[2]);
-
-        }
-        else if (transform.position.y > minY && transform.position.y < maxY)
-        {
-            camera.transform.position = new Vector3(camera.transform.position[0], transform.position[1], camera.transform.position[2]);
-        }
+        movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
 
         //If in range of an interactable object, give the possibility to interact.
@@ -48,6 +48,43 @@ public class PlayerScript : MonoBehaviour
             {
                 interactor.interact();
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        //Player Movement
+        rigiBody.velocity = movement;
+        if(transform.position.y > maxY - offsetPlayer)
+        {
+            transform.position = new Vector2(transform.position.x, maxY - offsetPlayer);
+        }
+        else if(transform.position.y < minY + offsetPlayer)
+        {
+            transform.position = new Vector2(transform.position.x, minY  + offsetPlayer);
+        }
+        if(transform.position.x > maxX - offsetPlayer)
+        {
+            transform.position = new Vector2(maxX - offsetPlayer, transform.position.y);
+        }
+        else if(transform.position.x < minX + offsetPlayer)
+        {
+            transform.position = new Vector2(minX + offsetPlayer, transform.position.y);
+        }
+
+        //Camera Movement
+        if (transform.position.x > minX + halfwidth && transform.position.x < maxX - halfwidth && transform.position.y > minY + halfheight && transform.position.y < maxY - halfheight)
+        {
+            mainCamera.transform.position = new Vector3(transform.position[0], transform.position[1], mainCamera.transform.position[2]);
+        }
+        else if (transform.position.x > minX + halfwidth && transform.position.x < maxX - halfwidth)
+        {
+            mainCamera.transform.position = new Vector3(transform.position[0], mainCamera.transform.position[1], mainCamera.transform.position[2]);
+
+        }
+        else if (transform.position.y > minY + halfheight && transform.position.y < maxY - halfheight)
+        {
+            mainCamera.transform.position = new Vector3(mainCamera.transform.position[0], transform.position[1], mainCamera.transform.position[2]);
         }
     }
 
