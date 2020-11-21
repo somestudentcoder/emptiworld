@@ -8,7 +8,12 @@ public class PlayerScript : MonoBehaviour
     public bool interactPossible = false;
     public InteractScript interactor;
 
-    
+    public float minX = -3.1f;
+    public float maxX = 5.1f;
+    public float minY = -2f;
+    public float maxY = 2f;
+
+
     // Update is called once per frame
     void Update()
     {
@@ -20,11 +25,25 @@ public class PlayerScript : MonoBehaviour
         movement *= Time.deltaTime;
         transform.Translate(movement);
         GameObject camera = GameObject.Find("Main Camera");
-        camera.transform.Translate(movement);
+        if (transform.position.x > minX && transform.position.x < maxX && transform.position.y > minY && transform.position.y < maxY)
+        {
+            camera.transform.Translate(movement);
+        }
+        else if (transform.position.x > minX && transform.position.x < maxX)
+        {
+            movement.y = 0;
+            camera.transform.Translate(movement);
+
+        }
+        else if (transform.position.y > minY && transform.position.y < maxY)
+        {
+            movement.x = 0;
+            camera.transform.Translate(movement);
+        }
 
 
         //If in range of an interactable object, give the possibility to interact.
-        if(interactPossible)
+        if (interactPossible)
         {
             bool pressed = Input.GetButtonDown("Fire1");
             if(pressed)
