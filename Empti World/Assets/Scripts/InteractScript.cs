@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    private SpriteRenderer jeff;
+    private SpriteRenderer spriteRenderer;
     private int currentSprite = 0;
     public Sprite[] spriteArray;
 
@@ -12,7 +12,7 @@ public class InteractScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jeff = this.GetComponent<SpriteRenderer>();
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -21,15 +21,37 @@ public class InteractScript : MonoBehaviour
         
     }
 
-    void changeColor()
+    public void interact()
     {
         if(currentSprite == 1)
         {
-            jeff.sprite = spriteArray[currentSprite-1];
+            currentSprite -= 1;
+            spriteRenderer.sprite = spriteArray[currentSprite];
         }
         else
         {
-            jeff.sprite = spriteArray[currentSprite+1];
+            currentSprite += 1;
+            spriteRenderer.sprite = spriteArray[currentSprite];
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
+        if(player)
+        {
+            player.interactPossible = true;
+            player.interactor = this;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
+        if(player)
+        {
+            player.interactPossible = false;
+            player.interactor = null;
         }
     }
 }
