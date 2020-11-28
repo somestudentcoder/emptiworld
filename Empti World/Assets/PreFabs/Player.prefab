@@ -146,3 +146,7 @@ MonoBehaviour:
   speed: {x: 10, y: 10}
   interactPossible: 0
   interactor: {fileID: 0}
+  minX: -48.5
+  maxX: 48.5
+  minY: -53.5
+  maxY: 48.5

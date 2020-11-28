@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public bool blocked = false;
+
     public Vector2 speed = new Vector2(10, 10);
     public bool interactPossible = false;
     public InteractScript interactor;
@@ -46,13 +48,19 @@ public class PlayerScript : MonoBehaviour
             bool pressed = Input.GetButtonDown("Fire1");
             if(pressed)
             {
-                interactor.interact();
+                interactor.interact(this);
             }
         }
     }
 
     void FixedUpdate()
-    {
+    {   
+        if(blocked)
+        {
+            rigiBody.velocity = new Vector2(0,0);
+            return;
+        }
+
         //Player Movement
         rigiBody.velocity = movement;
         if(transform.position.y > maxY - offsetPlayer)

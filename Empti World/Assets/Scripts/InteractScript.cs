@@ -4,35 +4,25 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private int currentSprite = 0;
-    public Sprite[] spriteArray;
 
-
-    // Start is called before the first frame update
-    void Start()
+    public void interact(PlayerScript player)
     {
-        spriteRenderer = this.GetComponent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void interact()
-    {
-        //Sample functionality -> changing sprite.
-        if(currentSprite == 1)
+        //find which object it is and interact with it
+        if(GetComponent<TreeScript>())
         {
-            currentSprite -= 1;
-            spriteRenderer.sprite = spriteArray[currentSprite];
+            GetComponent<TreeScript>().interact(player);
         }
-        else
+        else if(GetComponent<StoneScript>())
         {
-            currentSprite += 1;
-            spriteRenderer.sprite = spriteArray[currentSprite];
+            GetComponent<StoneScript>().interact(player);
+        }
+        else if(GetComponent<FarmingFieldScript>())
+        {
+            GetComponent<FarmingFieldScript>().interact(player);
+        }
+        else if(GetComponent<InteractableObjectScript>())
+        {
+            GetComponent<InteractableObjectScript>().interact();
         }
     }
 
