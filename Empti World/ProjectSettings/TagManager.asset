@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 2803119501
+    locked: 0
+  - name: Grass
+    uniqueID: 2901492611
+    locked: 0
+  - name: UnderPlayerObjects
+    uniqueID: 1446887263
+    locked: 0
+  - name: Player
+    uniqueID: 3453281891
+    locked: 0
+  - name: OverPlayerObjects
+    uniqueID: 2370194355
+    locked: 0

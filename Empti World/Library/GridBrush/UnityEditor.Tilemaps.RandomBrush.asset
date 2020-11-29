@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80edd6caba93514eb01722041fe50b4, type: 3}
+  m_Name: Random Brush
+  m_EditorClassIdentifier: 
+  m_Cells:
+  - m_Tile: {fileID: 11400000, guid: 67b7ee1a97fbfde9e81ee383e1ba36e4, type: 2}
+    m_Matrix:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Pivot: {x: 0, y: 0, z: 0}
+  m_CanChangeZPosition: 0
+  randomTileSetSize: {x: 1, y: 1, z: 1}
+  randomTileSets:
+  - randomTiles:
+    - {fileID: 11400000, guid: 04ef9efc5b1913baba106a435f33ced5, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: b1be32594ed6fc3aa81a272ca30da510, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: 67b7ee1a97fbfde9e81ee383e1ba36e4, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: c13eb7aff081339758c13726693051b1, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: d6c83237241ed1a9cb46c5c85c857261, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: d0c68e3b060029b2f9bc9f9afeda01fa, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: f4682b548ea0b9f8eb8e6a867a00f0f7, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: 5b2307dbf3aa38ad98b56adc9bbb5f4f, type: 2}
+  - randomTiles:
+    - {fileID: 11400000, guid: 67b7ee1a97fbfde9e81ee383e1ba36e4, type: 2}
+  pickRandomTiles: 1
+  addToRandomTiles: 0
