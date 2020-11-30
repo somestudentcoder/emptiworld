@@ -25,24 +25,4 @@ public class InteractScript : MonoBehaviour
             GetComponent<InteractableObjectScript>().interact();
         }
     }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
-        if(player)
-        {
-            player.interactPossible = true;
-            player.interactor = this;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        PlayerScript player = other.gameObject.GetComponent<PlayerScript>();
-        if(player)
-        {
-            player.interactPossible = false;
-            player.interactor = null;
-        }
-    }
 }

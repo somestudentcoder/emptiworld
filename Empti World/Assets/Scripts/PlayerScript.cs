@@ -7,8 +7,8 @@ public class PlayerScript : MonoBehaviour
     public bool blocked = false;
 
     public Vector2 speed = new Vector2(10, 10);
-    public bool interactPossible = false;
-    public InteractScript interactor;
+    //public bool interactPossible = false;
+    //public InteractScript interactor;
 
     public float minX;
     public float maxX;
@@ -43,12 +43,26 @@ public class PlayerScript : MonoBehaviour
 
 
         //If in range of an interactable object, give the possibility to interact.
-        if (interactPossible)
+        /*if (interactPossible)
         {
             bool pressed = Input.GetButtonDown("Fire1");
             if(pressed)
             {
                 interactor.interact(this);
+            }
+        }*/
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log(this.transform.position + Vector3.down);
+            Collider2D hit = Physics2D.OverlapCircle(this.transform.position + Vector3.down, 0.3f, LayerMask.GetMask("Interactable Objects"));
+            if (hit != null)
+            {
+                Debug.Log(hit.transform.position);
+                InteractScript script = hit.GetComponent<InteractScript>();
+                if (script != null)
+                {
+                    script.interact(this);
+                }
             }
         }
     }
