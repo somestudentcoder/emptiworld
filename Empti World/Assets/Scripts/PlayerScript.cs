@@ -24,6 +24,9 @@ public class PlayerScript : MonoBehaviour
     private Vector3 movement;
     private Camera mainCamera;
 
+
+    private int wood; 
+
     void Start()
     {
         if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();
@@ -109,5 +112,7 @@ public class PlayerScript : MonoBehaviour
             mainCamera.transform.position = new Vector3(mainCamera.transform.position[0], transform.position[1], mainCamera.transform.position[2]);
         }
     }
+    
+    
 
 }

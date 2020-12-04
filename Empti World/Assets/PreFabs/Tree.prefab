@@ -160,8 +160,8 @@ MonoBehaviour:
   fellingTime: 2
   regrowTime: 10
   spriteArray:
-  - {fileID: 21300000, guid: fb24a7532beaf0d4d9e84a50239d5007, type: 3}
-  - {fileID: 21300000, guid: d9240b14c02c02144817d77543d7335f, type: 3}
+  - {fileID: 21300000, guid: 1740e000e41fb9e1d87096dbdf7936fe, type: 3}
+  - {fileID: 21300000, guid: 6e52c87e646636b40a93470415cefd4a, type: 3}
 --- !u!61 &5536162961608221587
 BoxCollider2D:
   m_ObjectHideFlags: 0
