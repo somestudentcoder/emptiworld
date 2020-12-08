@@ -50,9 +50,14 @@ public class TreeScript : MonoBehaviour
         }
     }
 
+    public void seasonChange()
+    {
+        spriteRenderer.sprite = spriteArray[GameObject.Find("GameManager").GetComponentInChildren<SeasonScript>().currentSeason];
+    }
+
     private void fellTree()
     {
-        spriteRenderer.sprite = spriteArray[1];
+        spriteRenderer.sprite = spriteArray[4];
         player.blocked = false;
         player = null;
         beingFelled = false;
@@ -61,7 +66,7 @@ public class TreeScript : MonoBehaviour
 
     private void regrowTree()
     {
-        spriteRenderer.sprite = spriteArray[0];
+        spriteRenderer.sprite = spriteArray[GameObject.Find("GameManager").GetComponentInChildren<SeasonScript>().currentSeason];
         regrowing = false;
     }
 

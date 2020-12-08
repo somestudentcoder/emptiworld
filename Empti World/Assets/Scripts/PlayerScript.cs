@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour
     private float halfheight; 
     private float halfwidth;
     private bool showInventory = false;
-    private bool cooldown = false;
 
     private Rigidbody2D rigiBody;
     private Vector3 movement;

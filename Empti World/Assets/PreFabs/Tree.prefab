@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5536162961608221587}
   m_Layer: 10
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +161,9 @@ MonoBehaviour:
   regrowTime: 10
   spriteArray:
   - {fileID: 21300000, guid: 1740e000e41fb9e1d87096dbdf7936fe, type: 3}
+  - {fileID: 21300000, guid: 41044aab8074c564a86910946621528e, type: 3}
+  - {fileID: 21300000, guid: 2e74fdf93615bbd4295c93dd139cf2de, type: 3}
+  - {fileID: 21300000, guid: a5c562b7d316ab8429e7a7d812abd7d4, type: 3}
   - {fileID: 21300000, guid: 6e52c87e646636b40a93470415cefd4a, type: 3}
 --- !u!61 &5536162961608221587
 BoxCollider2D:
