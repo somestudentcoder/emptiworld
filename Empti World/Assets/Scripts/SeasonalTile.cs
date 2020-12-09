@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEditor.Tilemaps;
 
 [CreateAssetMenu(fileName = "New Seasonal Tile", menuName = "Tiles/Seasonal Tile")]
 public class SeasonalTile : Tile
@@ -41,5 +42,13 @@ public class SeasonalTile : Tile
      
         //    Change Sprite
         tileData.sprite = newSprite;
+    }
+
+    [CreateTileFromPalette]
+    public static TileBase CreateSeasonalTile(Sprite sprite)
+    {
+        var seasonalTile = ScriptableObject.CreateInstance<SeasonalTile>();
+        seasonalTile.Spring = sprite;
+        return seasonalTile;
     }
 }
