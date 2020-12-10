@@ -10,7 +10,6 @@ public class PlayerScript : MonoBehaviour
     //public bool interactPossible = false;
     //public InteractScript interactor;
 
-    public GameObject panel;
     public float minX;
     public float maxX;
     public float minY;
@@ -20,7 +19,7 @@ public class PlayerScript : MonoBehaviour
 
     private float halfheight; 
     private float halfwidth;
-    private bool showInventory = false;
+    
 
     private Rigidbody2D rigiBody;
     private Vector3 movement;
@@ -70,13 +69,6 @@ public class PlayerScript : MonoBehaviour
                     script.interact(this);
                 }
             }
-        }
-
-        if(Input.GetKeyDown("e"))
-        {
-            showInventory = !showInventory;
-            panel.gameObject.SetActive(showInventory);
-            
         }
     }
 
