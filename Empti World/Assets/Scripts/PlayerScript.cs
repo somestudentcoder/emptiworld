@@ -18,6 +18,10 @@ public class PlayerScript : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public bool damageable = true;
+    public float damageCoolDown;
+    private float damageTimer;
+
     private float offsetPlayer = 0.5f;
 
     private float halfheight; 
@@ -27,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rigiBody;
     private Vector3 movement;
     private Camera mainCamera;
+    private GameObject gm;
 
 
 
@@ -34,6 +39,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.Find("GameManager");
         loadingBar.gameObject.SetActive(false);
         if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();
 
@@ -41,6 +47,8 @@ public class PlayerScript : MonoBehaviour
         halfwidth =  halfheight * Camera.main.aspect;
 
         mainCamera = Camera.main;
+
+        damageTimer = damageCoolDown;
     }
     // Update is called once per frame
     void Update()
@@ -50,16 +58,18 @@ public class PlayerScript : MonoBehaviour
 
         movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
-
-        //If in range of an interactable object, give the possibility to interact.
-        /*if (interactPossible)
+        //Damage timer logic
+        if(damageable == false)
         {
-            bool pressed = Input.GetButtonDown("Fire1");
-            if(pressed)
+            damageTimer -= Time.deltaTime;
+            if(damageTimer <= 0)
             {
-                interactor.interact(this);
+                damageTimer = damageCoolDown;
+                damageable = true;
             }
-        }*/
+        }
+
+
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log(this.transform.position + Vector3.down);
@@ -118,7 +128,15 @@ public class PlayerScript : MonoBehaviour
             mainCamera.transform.position = new Vector3(mainCamera.transform.position[0], transform.position[1], mainCamera.transform.position[2]);
         }
     }
-    
-    
 
+    public void damage(int dmg)
+    {
+        damageable = false;
+        gm.GetComponent<HealthScript>().damage(dmg);
+    }
+
+    public void heal(int healing)
+    {
+        gm.GetComponent<HealthScript>().heal(healing);
+    }
 }

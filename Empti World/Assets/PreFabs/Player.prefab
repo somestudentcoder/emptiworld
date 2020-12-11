@@ -144,9 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocked: 0
-  loading_bar: {fileID: 0}
+  loadingBar: {fileID: 0}
   speed: {x: 10, y: 10}
   minX: -48.5
   maxX: 48.5
   minY: -53.5
   maxY: 48.5
+  damageable: 1
+  damageCoolDown: 1

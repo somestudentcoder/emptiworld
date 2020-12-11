@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9118555128225208497}
   - component: {fileID: 1521105891}
   - component: {fileID: 1521105892}
+  - component: {fileID: 887914102}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e43a65c3e1243c43a778580766dd469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthPoints: 100
+  continousDamageEnabled: 0
+  continousDamage: 20
 --- !u!114 &1521105892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,13 +60,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14b6b4dbc6504844bbbb6f298a2ff85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpringTiles:
-  - {fileID: 11400000, guid: 070245d63baf87f4bb6230b190b17cf1, type: 2}
-  SummerTiles:
-  - {fileID: 11400000, guid: 752dde6243f910e488c45d9ed9ab7cb2, type: 2}
-  FallTiles:
-  - {fileID: 11400000, guid: 94f0fe15d94635b419401581f2f502a4, type: 2}
-  WinterTiles:
-  - {fileID: 11400000, guid: 571324b9fdc3bf9418a556726337db24, type: 2}
-  tilemap: {fileID: 4207199960500091986, guid: c9b3599dcf096cc408496259a562730c, type: 3}
   SeasonCooldown: 3
+  currentSeason: 0
+--- !u!114 &887914102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835231974117881058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54abae5b6a2727840aafefbde7e5d15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cable: 0
+  microchip: 0
+  stone: 0
+  iron: 0
+  coal: 0
+  wood: 0
+  water: 0
+  crop: 0
+  oven: 0
+  bucket: 0
+  steam_engine: 0
+  brass_pipe: 0
