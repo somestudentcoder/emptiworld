@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7457472471424981268}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,9 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocked: 0
+  loading_bar: {fileID: 0}
   speed: {x: 10, y: 10}
-  interactPossible: 0
-  interactor: {fileID: 0}
   minX: -48.5
   maxX: 48.5
   minY: -53.5

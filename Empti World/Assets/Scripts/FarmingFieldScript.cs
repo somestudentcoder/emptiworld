@@ -38,8 +38,10 @@ public class FarmingFieldScript : MonoBehaviour
         if(beingFarmed)
         {
             currentFarmingTime -= Time.deltaTime;
-            if(currentFarmingTime <= 0)
+            player.loadingBar.value = (farmingTime - currentFarmingTime) / farmingTime;
+            if (currentFarmingTime <= 0)
             {
+                player.loadingBar.gameObject.SetActive(false);
                 currentFarmingTime = farmingTime;
                 player.blocked = false;
                 player = null;

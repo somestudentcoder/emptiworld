@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TreeScript : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class TreeScript : MonoBehaviour
         spriteRenderer = this.GetComponent<SpriteRenderer>();
         currentFellingTime = fellingTime;
         currentRegrowTime = regrowTime;
+        player = GameObject.Find("Player").GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
@@ -33,13 +35,15 @@ public class TreeScript : MonoBehaviour
         if(beingFelled)
         {
             currentFellingTime -= Time.deltaTime;
-            if(currentFellingTime <= 0)
+            player.loadingBar.value = (fellingTime - currentFellingTime) / fellingTime;
+            if (currentFellingTime <= 0)
             {
+                player.loadingBar.gameObject.SetActive(false);
                 fellTree();
                 currentFellingTime = fellingTime;
             }
         }
-        if(regrowing)
+        else if(regrowing)
         {
             currentRegrowTime -= Time.deltaTime;
             if(currentRegrowTime <= 0)

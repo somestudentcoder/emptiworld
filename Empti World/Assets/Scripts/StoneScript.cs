@@ -22,8 +22,10 @@ public class StoneScript : MonoBehaviour
         if(beingMined)
         {
             currentMiningTime -= Time.deltaTime;
-            if(currentMiningTime <= 0)
+            player.loadingBar.value = (miningTime - currentMiningTime) / miningTime;
+            if (currentMiningTime <= 0)
             {
+                player.loadingBar.gameObject.SetActive(false);
                 currentMiningTime = miningTime;
                 beingMined = false;
                 player.blocked = false;

@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
     public bool blocked = false;
+
+    public Slider loadingBar;
 
     public Vector2 speed = new Vector2(10, 10);
     //public bool interactPossible = false;
@@ -31,6 +34,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        loadingBar.gameObject.SetActive(false);
         if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();
 
         halfheight = Camera.main.orthographicSize;
@@ -71,7 +75,6 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-
 
     void FixedUpdate()
     {   
