@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Experimental.AssetImporters;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor.Tilemaps;
@@ -47,8 +49,16 @@ public class SeasonalTile : Tile
     [CreateTileFromPalette]
     public static TileBase CreateSeasonalTile(Sprite sprite)
     {
+        int sprite_number = int.Parse(sprite.name.Substring(sprite.name.LastIndexOf('_') + 1));
+        Debug.Log("Tileset Summer_" + sprite_number);
+        Sprite[] summerTiles = Resources.LoadAll<Sprite>("Tileset Summer");
+        Sprite[] fallTiles = Resources.LoadAll<Sprite>("Tileset Fall");
+        Sprite[] winterTiles = Resources.LoadAll<Sprite>("Tileset Winter");
         var seasonalTile = ScriptableObject.CreateInstance<SeasonalTile>();
         seasonalTile.Spring = sprite;
+        seasonalTile.Summer = summerTiles[sprite_number];
+        seasonalTile.Fall = fallTiles[sprite_number];
+        seasonalTile.Winter = winterTiles[sprite_number];
         return seasonalTile;
     }
 }

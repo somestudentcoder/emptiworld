@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class SeasonScript : MonoBehaviour
 {
-    private Tilemap tilemap;
+    private ArrayList tilemaps = new ArrayList();
     public float SeasonCooldown;
     private float[] SeasonTimers;
     public int currentSeason;
@@ -16,9 +16,21 @@ public class SeasonScript : MonoBehaviour
         SeasonTimers = new float[4];
         setTimers();
 
-        GameObject go = GameObject.Find("Grass");
-        tilemap = go.GetComponentInChildren<Tilemap>();
-        tilemap.RefreshAllTiles();
+        GameObject grass_tilemap = GameObject.Find("Grass");
+        GameObject ground_tilemap = GameObject.Find("Ground");
+        GameObject impassable_tilemap = GameObject.Find("Impassable");
+        tilemaps.Add(grass_tilemap.GetComponentInChildren<Tilemap>());
+        tilemaps.Add(ground_tilemap.GetComponentInChildren<Tilemap>());
+        tilemaps.Add(impassable_tilemap.GetComponentInChildren<Tilemap>());
+        refreshAllTileMaps();
+    }
+
+    void refreshAllTileMaps()
+    {
+        foreach (Tilemap map in tilemaps)
+        {
+            map.RefreshAllTiles();
+        }
     }
 
     void setTimers()
@@ -50,12 +62,13 @@ public class SeasonScript : MonoBehaviour
         }
         changeTiles();
         changeTrees();
+        changeFarmingFields();
         changeMusic();
     }
 
     void changeTiles()
     {
-        tilemap.RefreshAllTiles();
+        refreshAllTileMaps();
     }
 
     void changeTrees()
@@ -64,6 +77,15 @@ public class SeasonScript : MonoBehaviour
         foreach(GameObject tree in trees)
         {
             tree.GetComponent<TreeScript>().seasonChange();
+        }
+    }
+
+    void changeFarmingFields()
+    {
+        GameObject[] fields = GameObject.FindGameObjectsWithTag("FarmingField");
+        foreach(GameObject field in fields)
+        {
+            field.GetComponent<FarmingFieldScript>().seasonChange();
         }
     }
 

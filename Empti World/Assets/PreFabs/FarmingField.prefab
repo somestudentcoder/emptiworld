@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5083525610203795517}
   m_Layer: 10
   m_Name: FarmingField
-  m_TagString: Untagged
+  m_TagString: FarmingField
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,5 +160,15 @@ MonoBehaviour:
   farmingTime: 2
   growTime: 4
   spriteArray:
-  - {fileID: -9036706201675488879, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
-  - {fileID: -1639178512879994124, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
+  - sprites:
+    - {fileID: -6833219676223801517, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
+    - {fileID: -8909314643442656021, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
+  - sprites:
+    - {fileID: -902754245555903395, guid: 5725fef65e0fd070b9ba0bc6979fa43f, type: 3}
+    - {fileID: -4098919717329975339, guid: 5725fef65e0fd070b9ba0bc6979fa43f, type: 3}
+  - sprites:
+    - {fileID: -820393777154259395, guid: 34682bec84560ab629d1c3b8e0a45353, type: 3}
+    - {fileID: -9056816305074558798, guid: 34682bec84560ab629d1c3b8e0a45353, type: 3}
+  - sprites:
+    - {fileID: -9067296539148790072, guid: f916326e66f21ce8693a6c766af13e3c, type: 3}
+    - {fileID: 1936281651774372622, guid: f916326e66f21ce8693a6c766af13e3c, type: 3}

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class SpriteList
+{
+    public Sprite[] sprites;
+}
+
 public class FarmingFieldScript : MonoBehaviour
 {
     public float farmingTime;
@@ -17,11 +23,12 @@ public class FarmingFieldScript : MonoBehaviour
 
     //Sprite stuff
     private SpriteRenderer spriteRenderer;
-    public Sprite[] spriteArray;
+    public SpriteList[] spriteArray;
     private int spriteAmount;
     private int currentSprite = 0;
 
     private PlayerScript player;
+    private SeasonScript seasonScript;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +36,8 @@ public class FarmingFieldScript : MonoBehaviour
         spriteRenderer = this.GetComponent<SpriteRenderer>();
         currentFarmingTime = farmingTime;
         currentGrowTime = growTime;
-        spriteAmount = spriteArray.Length - 1;
+        spriteAmount = spriteArray[0].sprites.Length - 1;
+        seasonScript = GameObject.Find("GameManager").GetComponent<SeasonScript>();
     }
 
     // Update is called once per frame
@@ -70,17 +78,24 @@ public class FarmingFieldScript : MonoBehaviour
         }
     }
 
+    public void seasonChange()
+    {
+        Debug.Log(seasonScript.currentSeason);
+        spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
+    }
+
     private void changeSprite()
     {
+        
         currentSprite++;
         if(currentSprite <= spriteAmount)
         {
-            spriteRenderer.sprite = spriteArray[currentSprite];
+            spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
         }
         else
         {
             currentSprite = 0;
-            spriteRenderer.sprite = spriteArray[currentSprite];
+            spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
         }
     }
 
