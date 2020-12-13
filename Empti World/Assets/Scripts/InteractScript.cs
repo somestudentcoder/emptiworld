@@ -31,5 +31,9 @@ public class InteractScript : MonoBehaviour
         {
             GetComponent<InteractableObjectScript>().interact();
         }
+        else if (GetComponent<HouseScript>())
+        {
+            GetComponent<HouseScript>().interact();
+        }
     }
 }

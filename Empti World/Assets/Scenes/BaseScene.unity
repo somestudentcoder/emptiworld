@@ -92179,7 +92179,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 918570978}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 887914102}
+        m_MethodName: craftMine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &918570978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101099,6 +101110,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -47, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 10
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: 48, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -102471,8 +102491,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 665e033b026341a35a715a5000ec7e1e, type: 2}
   - m_RefCount: 94
     m_Data: {fileID: 11400000, guid: 6c368546c5e9a580585fa6ec5f4b6a0a, type: 2}
   - m_RefCount: 69
@@ -102490,8 +102510,9 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 103
     m_Data: {fileID: 142938746352464767, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -5137759655197879367, guid: 4f9f00a411fd7237d923d47d0c100332,
+      type: 3}
   - m_RefCount: 94
     m_Data: {fileID: -2579995246124117000, guid: 4f9f00a411fd7237d923d47d0c100332,
       type: 3}
@@ -102517,7 +102538,7 @@ Tilemap:
     m_Data: {fileID: 2439514110115115665, guid: 4f9f00a411fd7237d923d47d0c100332,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 718
+  - m_RefCount: 719
     m_Data:
       e00: 1
       e01: 0
@@ -102536,7 +102557,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 718
+  - m_RefCount: 719
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -103017,7 +103038,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063836467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 887914102}
+        m_MethodName: craftSawmill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063836467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103510,6 +103542,16 @@ PrefabInstance:
       propertyPath: oven
       value: 
       objectReference: {fileID: 2928831153372248586, guid: b8253361a8cb9694b8893d24a4e600ab,
+        type: 3}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: mine
+      value: 
+      objectReference: {fileID: 2928831153372248586, guid: 5cb0acbbc9529f940a1aecdcfde78be3,
+        type: 3}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: sawmill
+      value: 
+      objectReference: {fileID: 2928831153372248586, guid: 6fef840294b12e949bdac59ee7896502,
         type: 3}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown

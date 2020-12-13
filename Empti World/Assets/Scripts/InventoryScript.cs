@@ -98,7 +98,7 @@ public class InventoryScript : MonoBehaviour
         const int required_stone = 8;
 
         // Continue only if all requirements are met
-        if(stone >= required_stone)
+        if (stone >= required_stone)
         {
             stone -= required_stone;
             Instantiate(oven, new Vector3(0, 0, 0), Quaternion.identity);
@@ -143,12 +143,46 @@ public class InventoryScript : MonoBehaviour
         // Continue only if all requirements are met
         if (iron >= required_iron && stone >= required_stone && wood >= required_wood)
         {
-            
+
             iron -= required_iron;
             stone -= required_stone;
             wood -= required_wood;
 
-            Instantiate(house, new Vector3(2,5,0), Quaternion.identity);
+            Instantiate(house, new Vector3(2, 5, 0), Quaternion.identity);
+        }
+    }
+
+    public void craftMine()
+    {
+        // Required resources
+        const int required_iron = 8;
+        const int required_stone = 8;
+        const int required_wood = 8;
+
+        if (iron >= required_iron && stone >= required_stone && wood >= required_wood)
+        {
+            iron -= required_iron;
+            stone -= required_stone;
+            wood -= required_wood;
+
+            Instantiate(mine, new Vector3(20, 27, 0), Quaternion.identity);
+        }
+    }
+
+    public void craftSawmill()
+    {
+        // Required resources
+        const int required_iron = 8;
+        const int required_stone = 0;
+        const int required_wood = 8;
+
+        if (iron >= required_iron && stone >= required_stone && wood >= required_wood)
+        {
+            iron -= required_iron;
+            stone -= required_stone;
+            wood -= required_wood;
+
+            Instantiate(sawmill, new Vector3(-44, 34, 0), Quaternion.identity);
         }
     }
 }
