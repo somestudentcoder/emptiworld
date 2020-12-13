@@ -103457,6 +103457,60 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: house
+      value: 
+      objectReference: {fileID: 2928831153372248586, guid: 40bf6d64391ced14aacaaba43bbc33ad,
+        type: 3}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: iron
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: stone
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: microchip
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: cable
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: coal
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: wood
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: water
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: crop
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: bucket
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: steam_engine
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: brass_pipe
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: oven
+      value: 
+      objectReference: {fileID: 2928831153372248586, guid: b8253361a8cb9694b8893d24a4e600ab,
+        type: 3}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown
       value: 10

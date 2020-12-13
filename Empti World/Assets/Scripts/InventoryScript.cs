@@ -18,6 +18,11 @@ public class InventoryScript : MonoBehaviour
     private Text water_resource_text;
     private Text crop_resource_text;
 
+    public GameObject house;
+    public GameObject oven;
+    public GameObject garden;
+    public GameObject mine;
+    public GameObject sawmill;
 
     // All resources a player can have
     // Basic resources
@@ -31,7 +36,6 @@ public class InventoryScript : MonoBehaviour
     public int crop = 0;
 
     // Common resources
-    public int oven = 0;
     public int bucket = 0;
 
     // Technology resources
@@ -97,7 +101,7 @@ public class InventoryScript : MonoBehaviour
         if(stone >= required_stone)
         {
             stone -= required_stone;
-            oven += 1;
+            Instantiate(oven, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 
@@ -143,7 +147,8 @@ public class InventoryScript : MonoBehaviour
             iron -= required_iron;
             stone -= required_stone;
             wood -= required_wood;
-            //TODO upgrade house
+
+            Instantiate(house, new Vector3(2,5,0), Quaternion.identity);
         }
     }
 }
