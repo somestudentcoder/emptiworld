@@ -91,6 +91,6 @@ public class SeasonScript : MonoBehaviour
 
     void changeMusic()
     {
-        //TODO
+        GameObject.Find("MusicLoop").GetComponent<MusicLoopScript>().seasonChange();
     }
 }
