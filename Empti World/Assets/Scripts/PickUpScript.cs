@@ -25,6 +25,7 @@ public class PickUpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<BoxCollider2D>().enabled = false;
         player = GameObject.FindWithTag("Player");
         inventory = GameObject.Find("Player").GetComponent<InventoryScript>();
         offset = Random.insideUnitCircle.normalized * 2.0f;
@@ -70,6 +71,7 @@ public class PickUpScript : MonoBehaviour
         if (transform.position == offset)
         {
             initial_movement_done = true;
+            GetComponent<BoxCollider2D>().enabled = true;
         }
     }
     

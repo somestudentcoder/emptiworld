@@ -9,6 +9,7 @@ public class SeasonScript : MonoBehaviour
     public float SeasonCooldown;
     private float[] SeasonTimers;
     public int currentSeason;
+    public GameObject snow;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,14 @@ public class SeasonScript : MonoBehaviour
     {
         //Debug.Log("Changing Seasons..");
         currentSeason++;
+        if (currentSeason == 3)
+        {
+            snow.SetActive(true);
+        }
+        else
+        {
+            snow.SetActive(false);
+        }
         if(currentSeason > 3)
         {
             currentSeason = 0;
