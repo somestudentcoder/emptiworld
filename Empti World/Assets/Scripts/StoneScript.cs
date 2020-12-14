@@ -1,12 +1,15 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using Unity.Mathematics;
+ using UnityEngine;
+ using Random = UnityEngine.Random;
 
-public class StoneScript : MonoBehaviour
+ public class StoneScript : MonoBehaviour
 {
     public float miningTime;
     private float currentMiningTime;
-
+    public GameObject Stone;
+    public int amount_spawned = 1;
     private bool beingMined = false;
 
     private PlayerScript player;
@@ -30,6 +33,7 @@ public class StoneScript : MonoBehaviour
                 beingMined = false;
                 player.blocked = false;
                 player = null;
+                Instantiate(Stone, gameObject.transform.position, Quaternion.identity);
             }
         }
     }

@@ -158,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   miningTime: 4
+  Stone: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
+  amount_spawned: 1
 --- !u!61 &7294696745112504792
 BoxCollider2D:
   m_ObjectHideFlags: 0

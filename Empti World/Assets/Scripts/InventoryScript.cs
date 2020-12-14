@@ -185,4 +185,38 @@ public class InventoryScript : MonoBehaviour
             Instantiate(sawmill, new Vector3(-44, 34, 0), Quaternion.identity);
         }
     }
+
+    public void addResource(string resource_name, int amount)
+    {
+        switch (resource_name)
+        {
+            case "Wood":
+                wood += amount;
+                break;
+            case "Stone":
+                stone += amount;
+                break;
+            case "Coal":
+                coal += amount;
+                break;
+            case "Iron":
+                iron += amount;
+                break;
+            case "Water":
+                water += amount;
+                break;
+            case "Crop":
+                crop += amount;
+                break;
+            case "MicroChip":
+                microchip += amount;
+                break;
+            case "Cable":
+                cable += amount;
+                break;
+            default:
+                Debug.Log("This resource is not known: " + resource_name);
+                break;
+        }
+    }
 }
