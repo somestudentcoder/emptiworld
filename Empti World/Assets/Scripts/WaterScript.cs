@@ -6,6 +6,7 @@ public class WaterScript : MonoBehaviour
 {
 
     private PlayerScript player;
+    private InventoryScript inventory;
 
     public float fillingTime;
     private float currentFillingTime;
@@ -14,6 +15,7 @@ public class WaterScript : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerScript>();
+        inventory = GameObject.Find("Player").GetComponent<InventoryScript>();
     }
 
     // Update is called once per frame
@@ -30,8 +32,8 @@ public class WaterScript : MonoBehaviour
                 filling = false;
                 player.blocked = false;
                 player = null;
-
-
+                inventory.bucket -= 1;
+                inventory.water += 1;
             }
         }
         else if (PlayerIsInteracting())
@@ -53,10 +55,11 @@ public class WaterScript : MonoBehaviour
             {
                 // raycast hit this gameobject
                 Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                float distance = Vector2.Distance(mouse_position, player.transform.position);
-                if (distance <= 3)
+                player = GameObject.Find("Player").GetComponent<PlayerScript>();
+                float distance = Vector2.Distance(mouse_position, GameObject.Find("Player").transform.position);
+                
+                if (distance <= 3 && inventory.bucket > 0)
                 {
-                    Debug.Log("hit a water tile");
                     return true;
                 }
             }

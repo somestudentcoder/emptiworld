@@ -34,7 +34,7 @@ public class StoneScript : MonoBehaviour
                 beingMined = false;
                 player.blocked = false;
                 player = null;
-                Instantiate(rock, transform.position + new Vector3(0.0f + Random.Range(-0.7f, 0.7f), -2.0f + Random.Range(-0.1f, 0.1f), 0.0f), Quaternion.identity);
+                Instantiate(rock, transform.position + new Vector3(0.0f + Random.Range(-0.7f, 0.7f), -2.0f + Random.Range(-0.1f, 0.1f), -1.0f), Quaternion.identity);
             }
         }
     }

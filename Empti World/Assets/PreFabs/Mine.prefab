@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 932456052310625704}
   - component: {fileID: 5650701500202158460}
   - component: {fileID: 7662317105912793632}
-  - component: {fileID: 1918301540857891261}
   - component: {fileID: -983006688846000555}
   - component: {fileID: 165804727}
+  - component: {fileID: -1324763712432630908}
   m_Layer: 9
-  m_Name: House
+  m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,19 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1918301540857891261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2928831153372248586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25adf1fea311d6041953a4da908ecacb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteArray: []
 --- !u!114 &-983006688846000555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +171,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &-1324763712432630908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928831153372248586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f84fd0b657c9d6143b96130b14b54eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rock: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
+  miningFrequency: 3
