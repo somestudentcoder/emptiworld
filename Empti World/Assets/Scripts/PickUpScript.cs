@@ -10,6 +10,8 @@ public class PickUpScript : MonoBehaviour
 
     public float smooth_time = 0.3f;
 
+    public float delay = 1.0f;
+
     public string resource_name;
     
     private Vector3 velocity = Vector3.zero;
@@ -22,10 +24,15 @@ public class PickUpScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(delay > 0)
+        {
+            delay -= Time.deltaTime;
+            return;
+        }
         // Check if player is in range, then move to player
         if (pick_up_range > (player.transform.position - gameObject.transform.position).magnitude)
         {
-            Debug.Log("Moving to player");
+            //Debug.Log("Moving to player");
             gameObject.transform.position = Vector3.SmoothDamp(gameObject.transform.position, player.transform.position , ref velocity, smooth_time);
         }
     }
@@ -33,6 +40,10 @@ public class PickUpScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         //TODO: add the resource to the player
-        Destroy(gameObject);
+        if(delay <= 0)
+        {
+            Destroy(gameObject);
+        }
+    
     }
 }

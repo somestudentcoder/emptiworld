@@ -60,14 +60,6 @@ public class InventoryScript : MonoBehaviour
         water_resource_text = GameObject.Find("Water Resource Text").GetComponent<Text>();
         crop_resource_text = GameObject.Find("Crop Resource Text").GetComponent<Text>();
 
-        /*microchip_resource_text;
-        stone_resource_text;
-        iron_resource_text;
-        coal_resource_text;
-        wood_resource_text;
-        water_resource_text;
-        crop_resource_text;*/
-
         inventory = GameObject.Find("Inventory");
         inventory.gameObject.SetActive(false);
     }
