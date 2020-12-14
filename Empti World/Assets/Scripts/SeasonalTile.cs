@@ -50,7 +50,7 @@ public class SeasonalTile : Tile
     public static TileBase CreateSeasonalTile(Sprite sprite)
     {
         int sprite_number = int.Parse(sprite.name.Substring(sprite.name.LastIndexOf('_') + 1));
-        Debug.Log("Tileset Summer_" + sprite_number);
+        //Debug.Log("Tileset Summer_" + sprite_number);
         Sprite[] summerTiles = Resources.LoadAll<Sprite>("Tileset Summer");
         Sprite[] fallTiles = Resources.LoadAll<Sprite>("Tileset Fall");
         Sprite[] winterTiles = Resources.LoadAll<Sprite>("Tileset Winter");

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TreeScript : MonoBehaviour
 {
+    public GameObject log;
+
     public float fellingTime;
     private float currentFellingTime;
 
@@ -41,6 +43,7 @@ public class TreeScript : MonoBehaviour
                 player.loadingBar.gameObject.SetActive(false);
                 fellTree();
                 currentFellingTime = fellingTime;
+                Instantiate(log, transform.position + new Vector3(0.0f + Random.Range(-0.7f, 0.7f), -2.5f + Random.Range(-0.1f, 0.1f), 0.0f), Quaternion.identity);
             }
         }
         else if(regrowing)

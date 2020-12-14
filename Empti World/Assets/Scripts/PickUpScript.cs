@@ -13,7 +13,7 @@ public class PickUpScript : MonoBehaviour
     public string resource_name;
 
     public int amount = 1;
-    public float initial_travel_time = 1;
+    public float initial_travel_time = 0.3f;
 
     private bool initial_movement_done = false;
     private InventoryScript inventory;
@@ -26,7 +26,7 @@ public class PickUpScript : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        inventory = GameObject.Find("GameManager").GetComponent<InventoryScript>();
+        inventory = GameObject.Find("Player").GetComponent<InventoryScript>();
         offset = Random.insideUnitCircle.normalized * 2.0f;
         
         initial_position = transform.position;

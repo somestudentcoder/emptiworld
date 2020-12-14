@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c52d6a0dd8e8e041aa17285c81e7028, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log: {fileID: 3275500662602704066, guid: 6eff95f1437d87d2683f84cd41fe968f, type: 3}
   fellingTime: 2
   regrowTime: 10
   spriteArray:

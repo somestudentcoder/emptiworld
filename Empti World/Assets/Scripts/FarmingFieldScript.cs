@@ -80,7 +80,7 @@ public class FarmingFieldScript : MonoBehaviour
 
     public void seasonChange()
     {
-        Debug.Log(seasonScript.currentSeason);
+        //Debug.Log(seasonScript.currentSeason);
         spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
     }
 

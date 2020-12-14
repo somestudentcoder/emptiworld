@@ -53,7 +53,7 @@ public class SeasonScript : MonoBehaviour
 
     void nextSeason()
     {
-        Debug.Log("Changing Seasons..");
+        //Debug.Log("Changing Seasons..");
         currentSeason++;
         if(currentSeason > 3)
         {

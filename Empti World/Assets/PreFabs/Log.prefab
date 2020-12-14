@@ -96,10 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcad07a811ac64900883bfb2d46747b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pick_up_range: 5
+  pick_up_range: 4
   smooth_time: 0.3
-  resource_name: Wood
+  resource_name: wood
   amount: 1
+  initial_travel_time: 0.3
 --- !u!50 &-1157166323899961645
 Rigidbody2D:
   serializedVersion: 4

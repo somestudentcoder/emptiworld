@@ -72,7 +72,7 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log(this.transform.position + Vector3.down);
+            //Debug.Log(this.transform.position + Vector3.down);
             Collider2D hit = Physics2D.OverlapCircle(this.transform.position + Vector3.down, 0.3f, LayerMask.GetMask("Interactable Objects"));
             if (hit != null)
             {
