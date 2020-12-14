@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 932456052310625704}
   - component: {fileID: 5650701500202158460}
   - component: {fileID: 7662317105912793632}
-  - component: {fileID: 1918301540857891261}
   - component: {fileID: -983006688846000555}
   - component: {fileID: 165804727}
+  - component: {fileID: 639922780596562884}
   m_Layer: 9
-  m_Name: House
+  m_Name: Sawmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,19 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1918301540857891261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2928831153372248586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25adf1fea311d6041953a4da908ecacb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteArray: []
 --- !u!114 &-983006688846000555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +171,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &639922780596562884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928831153372248586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743b445bb70eeff43b07f2d41e325c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  log: {fileID: 3275500662602704066, guid: 6eff95f1437d87d2683f84cd41fe968f, type: 3}
+  fellingFrequency: 3

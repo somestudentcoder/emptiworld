@@ -43,6 +43,7 @@ public class TreeScript : MonoBehaviour
                 player.loadingBar.gameObject.SetActive(false);
                 fellTree();
                 currentFellingTime = fellingTime;
+
                 Instantiate(log, transform.position, Quaternion.identity);
             }
         }

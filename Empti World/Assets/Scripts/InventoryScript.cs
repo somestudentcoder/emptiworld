@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class InventoryScript : MonoBehaviour
 {
     private bool showInventory = false;
-    private GameObject inventory;
+    private GameObject inventoryUI;
 
     // Text fields to display resource numbers
     private Text cable_resource_text;
@@ -60,8 +60,8 @@ public class InventoryScript : MonoBehaviour
         water_resource_text = GameObject.Find("Water Resource Text").GetComponent<Text>();
         crop_resource_text = GameObject.Find("Crop Resource Text").GetComponent<Text>();
 
-        inventory = GameObject.Find("Inventory");
-        inventory.gameObject.SetActive(false);
+        inventoryUI = GameObject.Find("Inventory");
+        inventoryUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -80,7 +80,7 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetKeyDown("e"))
         {
             showInventory = !showInventory;
-            inventory.gameObject.SetActive(showInventory);
+            inventoryUI.gameObject.SetActive(showInventory);
         }
     }
 
@@ -157,7 +157,7 @@ public class InventoryScript : MonoBehaviour
             stone -= required_stone;
             wood -= required_wood;
 
-            Instantiate(mine, new Vector3(20, 27, 0), Quaternion.identity);
+            Instantiate(mine, new Vector3(20, 27, 5), Quaternion.identity);
         }
     }
 
