@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pick_up_range: 4
   smooth_time: 0.3
-  resource_name: wood
+  resource_name: Wood
   amount: 1
   initial_travel_time: 0.3
 --- !u!50 &-1157166323899961645

@@ -21,6 +21,11 @@ public class PlayerScript : MonoBehaviour
     public bool damageable = true;
     public float damageCoolDown;
     private float damageTimer;
+    public float regenCoolDown;
+    private float regenTimer;
+
+    public bool heatDamageProne = true;
+    public bool coldDamageProne = true;
 
     private float offsetPlayer = 0.5f;
 
@@ -49,6 +54,7 @@ public class PlayerScript : MonoBehaviour
         mainCamera = Camera.main;
 
         damageTimer = damageCoolDown;
+        regenTimer = regenCoolDown;
     }
     // Update is called once per frame
     void Update()
@@ -67,6 +73,14 @@ public class PlayerScript : MonoBehaviour
                 damageTimer = damageCoolDown;
                 damageable = true;
             }
+        }
+
+        //Regen timer logic
+        regenTimer += Time.deltaTime;
+        if(regenTimer >= regenCoolDown)
+        {
+            regenTimer = 0;
+            heal(20);
         }
 
 
@@ -132,6 +146,7 @@ public class PlayerScript : MonoBehaviour
     public void damage(int dmg)
     {
         damageable = false;
+        regenTimer = 0;
         gm.GetComponent<HealthScript>().damage(dmg);
     }
 

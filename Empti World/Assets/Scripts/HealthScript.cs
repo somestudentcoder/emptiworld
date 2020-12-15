@@ -10,10 +10,6 @@ public class HealthScript : MonoBehaviour
     private Color red = new Color(253,0,0);
 
     public int healthPoints = 100;
-    private float second = 1.0f;
-
-    public bool continousDamageEnabled = false;
-    public int continousDamage;
 
     private GameObject Bar;
     private GameObject Fill;
@@ -28,27 +24,32 @@ public class HealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(continousDamageEnabled)
-        {
-            second -= Time.deltaTime;
-            if(second <= 0)
-            {
-                damage(continousDamage);
-                second = 1.0f;
-            }
-        }
     }
 
     public void damage(int dmg)
     {
-        healthPoints -= dmg;
+        if(healthPoints <= 0)
+        {
+            healthPoints = 0;
+        }
+        else
+        {
+            healthPoints -= dmg;            
+        }
         setHealthBarValue();
         setHealthBarColor();
     }
 
     public void heal(int healing)
     {
-        healthPoints += healing;
+        if(healthPoints >= 100)
+        {
+            healthPoints = 100;
+        }
+        else
+        {
+            healthPoints += healing;
+        }
         setHealthBarValue();
         setHealthBarColor();
     }
