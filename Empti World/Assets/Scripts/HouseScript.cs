@@ -5,8 +5,8 @@ using UnityEngine;
 public class HouseScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private int currentSprite = 0;
-    public Sprite[] spriteArray;
+    //private int currentSprite = 0;
+    //public Sprite[] spriteArray;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,20 @@ public class HouseScript : MonoBehaviour
 
     public void interact()
     {
+        GameObject player = GameObject.Find("Player");
+
+        if(player.GetComponent<PlayerScript>().blocked)
+        {
+            player.GetComponent<PlayerScript>().blocked = false;
+            player.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            player.GetComponent<PlayerScript>().blocked = true;
+            player.GetComponent<SpriteRenderer>().enabled = false;
+        }
         //TODO change house lightning when sprites are done
+        /*
         if(currentSprite == 1)
         {
             currentSprite -= 1;
@@ -27,7 +40,6 @@ public class HouseScript : MonoBehaviour
             currentSprite += 1;
             spriteRenderer.sprite = spriteArray[currentSprite];
         }
-
-        GameObject.Find("Player").SetActive(false);
+        */
     }
 }

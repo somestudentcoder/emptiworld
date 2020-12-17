@@ -33,6 +33,7 @@ public class InteractScript : MonoBehaviour
         }
         else if (GetComponent<HouseScript>())
         {
+            player.loadingBar.gameObject.SetActive(false);
             GetComponent<HouseScript>().interact();
         }
     }
