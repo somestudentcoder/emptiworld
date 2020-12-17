@@ -95921,17 +95921,17 @@ MonoBehaviour:
   garden: {fileID: 0}
   mine: {fileID: 1791252856835748752, guid: 1e4c06395de11344ebde4868dfefd279, type: 3}
   sawmill: {fileID: 4032765010142290921, guid: d46ba5865b45e994db9a22aaa2d7f3b1, type: 3}
-  cable: 999
-  microchip: 999
-  stone: 999
-  iron: 999
-  coal: 999
-  wood: 999
-  water: 999
-  crop: 999
-  bucket: 999
-  steam_engine: 999
-  brass_pipe: 999
+  cable: 0
+  microchip: 0
+  stone: 0
+  iron: 0
+  coal: 0
+  wood: 0
+  water: 0
+  crop: 0
+  bucket: 0
+  steam_engine: 0
+  brass_pipe: 0
 --- !u!4 &1496927510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8518913978040660155, guid: 10367b5939db8854c8f5403ba5238a54,
@@ -104229,7 +104229,7 @@ PrefabInstance:
     - target: {fileID: 7457472471424981268, guid: 07da75914901c5e48aae1323e27fa6a0,
         type: 3}
       propertyPath: regenCoolDown
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07da75914901c5e48aae1323e27fa6a0, type: 3}
@@ -104380,7 +104380,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown
-      value: 15
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: snow
@@ -104388,7 +104388,7 @@ PrefabInstance:
       objectReference: {fileID: 401607475}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: StormCooldown
-      value: 5
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: currentSeason

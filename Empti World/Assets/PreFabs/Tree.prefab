@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   log: {fileID: 3275500662602704066, guid: 6eff95f1437d87d2683f84cd41fe968f, type: 3}
   fellingTime: 2
-  regrowTime: 10
+  regrowTime: 30
   spriteArray:
   - {fileID: 21300000, guid: 1740e000e41fb9e1d87096dbdf7936fe, type: 3}
   - {fileID: 21300000, guid: 95f4fed7cec5b9071b575a90c6f9f96d, type: 3}
