@@ -69,6 +69,9 @@ public class InventoryScript : MonoBehaviour
 
     // Alchemy resources
 
+    // Upgrades
+    public bool oven_upgrade = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -154,7 +157,34 @@ public class InventoryScript : MonoBehaviour
         if (stone >= required_stone)
         {
             stone -= required_stone;
+            oven_upgrade = true;
             Instantiate(oven, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+    }
+
+    public void craftCoal()
+    {
+        // Required resources
+        const int required_wood = 1;
+
+        // Continue only if all requirements are met
+        if (wood >= required_wood && oven_upgrade)
+        {
+            wood -= required_wood;
+            coal += 1;
+        }
+    }
+
+    public void craftIronIngot()
+    {
+        // Required resources
+        const int required_iron_ore = 1;
+
+        // Continue only if all requirements are met
+        if (iron_ore >= required_iron_ore && oven_upgrade)
+        {
+            iron_ore -= required_iron_ore;
+            iron_ingot += 1;
         }
     }
 
@@ -236,6 +266,75 @@ public class InventoryScript : MonoBehaviour
             wood -= required_wood;
 
             Instantiate(sawmill, new Vector3(-44, 34, 0), Quaternion.identity);
+        }
+    }
+
+
+    public void craftTinIngot()
+    {
+        // Required resources
+        const int required_tin_ore = 1;
+
+        if (tin_ore >= required_tin_ore && oven_upgrade)
+        {
+            tin_ore -= required_tin_ore;
+            tin_ingot += 1;
+        }
+    }
+
+
+    public void craftCopperIngot()
+    {
+        // Required resources
+        const int required_copper_ore = 1;
+
+        if (copper_ore >= required_copper_ore && oven_upgrade)
+        {
+            copper_ore -= required_copper_ore;
+            copper_ingot += 1;
+        }
+    }
+
+
+    public void craftBrassIngot()
+    {
+        // Required resources
+        const int required_copper_ingot = 1;
+        const int required_tin_ingot = 1;
+
+        if (copper_ingot >= required_copper_ingot && tin_ingot >= required_tin_ingot && oven_upgrade)
+        {
+            copper_ingot -= required_copper_ingot;
+            tin_ingot -= required_tin_ingot;
+            brass_ingot += 1;
+        }
+    }
+
+    public void crafSteamEngine()
+    {
+        // Required resources
+        const int required_brass_ingot = 8;
+        const int required_iron_ingot = 8;
+
+        if (brass_ingot >= required_brass_ingot && iron_ingot >= required_iron_ingot && oven_upgrade)
+        {
+            brass_ingot -= required_brass_ingot;
+            iron_ingot -= required_iron_ingot;
+            steam_engine += 1;
+        }
+    }
+
+    public void crafEngineFuel()
+    {
+        // Required resources
+        const int required_coal = 1;
+        const int required_water = 1;
+
+        if (coal >= required_coal && water >= required_water)
+        {
+            coal -= required_coal;
+            water -= required_water;
+            engine_fuel += 1;
         }
     }
 

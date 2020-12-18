@@ -32,14 +32,12 @@ public class WaterScript : MonoBehaviour
                 filling = false;
                 player.blocked = false;
                 player = null;
-                inventory.bucket -= 1;
-                inventory.water += 1;
+                inventory.water += inventory.bucket;
             }
         }
         else if (PlayerIsInteracting())
         {
             interact();
-            
         }
     }
 
