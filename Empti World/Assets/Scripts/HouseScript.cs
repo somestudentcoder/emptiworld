@@ -21,11 +21,13 @@ public class HouseScript : MonoBehaviour
         if(player.GetComponent<PlayerScript>().blocked)
         {
             player.GetComponent<PlayerScript>().blocked = false;
+            player.GetComponent<PlayerScript>().heatDamageProne = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
             player.GetComponent<PlayerScript>().blocked = true;
+            player.GetComponent<PlayerScript>().heatDamageProne = false;
             player.GetComponent<SpriteRenderer>().enabled = false;
         }
         //TODO change house lightning when sprites are done
