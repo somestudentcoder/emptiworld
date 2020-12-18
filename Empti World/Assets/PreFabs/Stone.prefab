@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7294696745112504792}
   m_Layer: 10
   m_Name: Stone
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rock: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
   miningTime: 4
+  specialMineralMax: 1
+  specialMineralCount: 0
+  isSpecial: 0
+  specialName: 
 --- !u!61 &7294696745112504792
 BoxCollider2D:
   m_ObjectHideFlags: 0

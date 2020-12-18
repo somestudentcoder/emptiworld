@@ -93947,12 +93947,12 @@ PrefabInstance:
     - target: {fileID: 1080724290498340849, guid: b680cf16cff1e694fac11856845667e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.013687
+      value: 42.71
       objectReference: {fileID: 0}
     - target: {fileID: 1080724290498340849, guid: b680cf16cff1e694fac11856845667e3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.406967
+      value: 34.77
       objectReference: {fileID: 0}
     - target: {fileID: 1080724290498340849, guid: b680cf16cff1e694fac11856845667e3,
         type: 3}
@@ -113516,3 +113516,31 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 887914102, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+--- !u!1 &8455334167393582439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5835231974117881058, guid: b38c38c1c30379545b0e0027be588d5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8455334167393582438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8455334167393582440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8455334167393582439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dea80376ca391b41ba899b0e6f6e1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardRock: {fileID: 21300000, guid: dc2890e401b395f63a8f2983db4e8fd0, type: 3}
+  tinRock: {fileID: 21300000, guid: f1ec1816f47ae5f91bdd7e4a6997ccf2, type: 3}
+  copperRock: {fileID: 21300000, guid: e467023f424600dfebb1b53eb6843e19, type: 3}
+  stone: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
+  tinOre: {fileID: 1946955152385664260, guid: 1a42edb176e9a1250bdfc4bd4f046cd3, type: 3}
+  copperOre: {fileID: 420257579661754751, guid: 52c14becfb0cbe8dea0f398a439149eb,
+    type: 3}
+  tinRocksCount: 2
+  copperRocksCount: 2
+  spawnCooldownSec: 5
