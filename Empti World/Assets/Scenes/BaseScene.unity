@@ -102112,11 +102112,11 @@ MonoBehaviour:
   mine: {fileID: 1791252856835748752, guid: 1e4c06395de11344ebde4868dfefd279, type: 3}
   sawmill: {fileID: 4032765010142290921, guid: d46ba5865b45e994db9a22aaa2d7f3b1, type: 3}
   stone: 0
-  iron_ore: 8
-  wood: 1
+  iron_ore: 0
+  wood: 0
   water: 0
   crop: 0
-  coal: 8
+  coal: 0
   iron_ingot: 0
   bucket: 0
   tin_ore: 0

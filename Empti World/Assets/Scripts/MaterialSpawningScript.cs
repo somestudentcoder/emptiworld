@@ -47,12 +47,12 @@ public class MaterialSpawningScript : MonoBehaviour
         switch (resource_name)
         {
             case "Tin":
-                Debug.Log("Spwaning Tin");
+                //Debug.Log("Spawning Tin");
                 script.rock = tinOre;
                 rock.GetComponent<SpriteRenderer>().sprite = tinRock;
                 break;
             case "Copper":
-                Debug.Log("Spwaning Copper");
+                //Debug.Log("Spawning Copper");
                 script.rock = copperOre;
                 rock.GetComponent<SpriteRenderer>().sprite = copperRock;
                 break;

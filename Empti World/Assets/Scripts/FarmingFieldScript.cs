@@ -10,22 +10,28 @@ public class SpriteList
 
 public class FarmingFieldScript : MonoBehaviour
 {
-    public float farmingTime;
-    private float currentFarmingTime;
+	const int EMPTY = 0;
+	const int GROWING = 1;
+	const int DONE = 2;
+
+	public GameObject crop;
+
+    public float actionTime;
+    private float currentActionTime;
 
     public float growTime;
     private float currentGrowTime;
 
-    private bool beingFarmed = false;
-    private bool farmed = false;
+    private bool planting = false;
+    private bool growing = false;
     private bool done = false;
-    private bool harvest = false;
+    private bool harvesting = false;
 
     //Sprite stuff
     private SpriteRenderer spriteRenderer;
     public SpriteList[] spriteArray;
     private int spriteAmount;
-    private int currentSprite = 0;
+    private int currentSprite;
 
     private PlayerScript player;
     private SeasonScript seasonScript;
@@ -34,48 +40,59 @@ public class FarmingFieldScript : MonoBehaviour
     void Start()
     {
         spriteRenderer = this.GetComponent<SpriteRenderer>();
-        currentFarmingTime = farmingTime;
+        currentActionTime = actionTime;
         currentGrowTime = growTime;
         spriteAmount = spriteArray[0].sprites.Length - 1;
         seasonScript = GameObject.Find("GameManager").GetComponent<SeasonScript>();
+        currentSprite = EMPTY;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(beingFarmed)
-        {
-            currentFarmingTime -= Time.deltaTime;
-            player.loadingBar.value = (farmingTime - currentFarmingTime) / farmingTime;
-            if (currentFarmingTime <= 0)
+    	if(planting)
+    	{
+    		currentActionTime -= Time.deltaTime;
+    		player.loadingBar.value = (actionTime - currentActionTime) / actionTime;
+    		if (currentActionTime <= 0)
             {
                 player.loadingBar.gameObject.SetActive(false);
-                currentFarmingTime = farmingTime;
+                currentActionTime = actionTime;
                 player.blocked = false;
                 player = null;
-                beingFarmed = false;
-                farmed = true;
+                planting = false;
+                growing = true;
                 changeSprite();
             }
-        }
-        else if(farmed)
-        {
-            currentGrowTime -= Time.deltaTime;
+    	}
+    	else if(growing)
+    	{
+    		currentGrowTime -= Time.deltaTime;
             if(currentGrowTime <= 0)
             {
                 currentGrowTime = growTime;
-                farmed = false;
+                growing = false;
                 done = true;
                 changeSprite();
             }
-        }
-        else if(harvest)
-        {
-            changeSprite();
-            player.blocked = false;
-            player = null;
-            harvest = false;
-        }
+    	}
+    	else if(harvesting)
+    	{
+    		currentActionTime -= Time.deltaTime;
+    		player.loadingBar.value = (actionTime - currentActionTime) / actionTime;
+    		if (currentActionTime <= 0)
+            {
+            	//DROPS WHEAT
+            	Instantiate(crop, transform.position, Quaternion.identity);
+                player.loadingBar.gameObject.SetActive(false);
+                currentActionTime = actionTime;
+                done = false;
+                changeSprite();
+	            player.blocked = false;
+	            player = null;
+	            harvesting = false;
+            }
+    	}
     }
 
     public void seasonChange()
@@ -86,35 +103,40 @@ public class FarmingFieldScript : MonoBehaviour
 
     private void changeSprite()
     {
-        
-        currentSprite++;
-        if(currentSprite <= spriteAmount)
-        {
-            spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
-        }
-        else
-        {
-            currentSprite = 0;
-            spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[currentSprite];
-        }
+    	Debug.Log("growing:" + growing);
+    	Debug.Log("done:" + done);
+    	Debug.Log("harvesting:" + harvesting);
+    	Debug.Log("planting:" + planting);
+    	if(growing)
+    	{
+    		spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[GROWING];
+    		currentSprite = GROWING;
+    	}
+    	else if(done)
+    	{
+    		spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[DONE];
+    		currentSprite = DONE;
+    	}
+    	else if(harvesting)
+    	{
+    		spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[EMPTY];
+    		currentSprite = EMPTY;
+    	}
     }
 
     public void interact(PlayerScript ply)
     {
-        if(farmed)
-        {
-            return;
-        }
-        player = ply;
-        player.blocked = true;
-        if(!done)
-        {
-            beingFarmed = true;   
-        }
-        else
-        {
-            harvest = true;
-            done = false;
-        }
+    	if(!done && !growing)
+    	{
+    		player = ply;
+    		player.blocked = true;
+    		planting = true;
+    	}
+    	else if(done)
+    	{
+    		player = ply;
+    		player.blocked = true;
+    		harvesting = true;
+    	}
     }
 }
