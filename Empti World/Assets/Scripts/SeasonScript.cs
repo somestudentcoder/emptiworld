@@ -28,10 +28,10 @@ public class SeasonScript : MonoBehaviour
 
         GameObject grass_tilemap = GameObject.Find("Grass");
         GameObject ground_tilemap = GameObject.Find("Ground");
-        GameObject impassable_tilemap = GameObject.Find("Impassable");
+        GameObject water_tilemap = GameObject.Find("Water");
         tilemaps.Add(grass_tilemap.GetComponentInChildren<Tilemap>());
         tilemaps.Add(ground_tilemap.GetComponentInChildren<Tilemap>());
-        tilemaps.Add(impassable_tilemap.GetComponentInChildren<Tilemap>());
+        tilemaps.Add(water_tilemap.GetComponentInChildren<Tilemap>());
         refreshAllTileMaps();
     }
 

@@ -32,45 +32,16 @@ public class WaterScript : MonoBehaviour
                 filling = false;
                 player.blocked = false;
                 player = null;
-                inventory.water += inventory.bucket;
+                inventory.water += 1;
+                inventory.bucket -= 1;
             }
-        }
-        else if (PlayerIsInteracting())
-        {
-            interact();
         }
     }
 
-    public bool PlayerIsInteracting()
+
+    public void interact(PlayerScript ply)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-
-            if (hit.collider != null && hit.collider.transform == this.transform)
-            {
-                // raycast hit this gameobject
-                Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                player = GameObject.Find("Player").GetComponent<PlayerScript>();
-                float distance = Vector2.Distance(mouse_position, GameObject.Find("Player").transform.position);
-                
-                if (distance <= 3 && inventory.bucket > 0)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public void interact()
-    {
-        player.loadingBar.gameObject.SetActive(true);
-        Camera cam = Camera.main.GetComponent<Camera>();
-        Vector3 screenPos = cam.WorldToScreenPoint(player.transform.position);
-        player.loadingBar.transform.position = screenPos + new Vector3(0, 60, 0);
+        player = ply;
         filling = true;
         player.blocked = true;
     }

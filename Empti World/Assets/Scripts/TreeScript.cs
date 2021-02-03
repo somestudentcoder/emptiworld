@@ -78,8 +78,10 @@ public class TreeScript : MonoBehaviour
         regrowing = false;
     }
 
+
     public void interact(PlayerScript ply)
     {
+
         if(regrowing)
         {
             return;

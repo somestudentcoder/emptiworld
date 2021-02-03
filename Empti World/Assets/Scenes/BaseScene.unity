@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 359576881}
     m_Modifications:
+    - target: {fileID: 4476022553559051730, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4665827501235454168, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,6 +186,11 @@ PrefabInstance:
     - target: {fileID: 4665827501235454168, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536162961608221587, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6399643339214200484, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
@@ -7402,6 +7412,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 359576881}
     m_Modifications:
+    - target: {fileID: 4476022553559051730, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4665827501235454168, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -101243,17 +101258,17 @@ MonoBehaviour:
   garden: {fileID: 0}
   mine: {fileID: 1791252856835748752, guid: 1e4c06395de11344ebde4868dfefd279, type: 3}
   sawmill: {fileID: 4032765010142290921, guid: d46ba5865b45e994db9a22aaa2d7f3b1, type: 3}
-  stone: 0
-  iron_ore: 0
-  wood: 0
-  water: 0
-  crop: 0
-  coal: 0
-  iron_ingot: 0
-  bucket: 0
-  tin_ore: 0
-  copper_ore: 0
-  tin_ingot: 0
+  stone: 99
+  iron_ore: 99
+  wood: 99
+  water: 99
+  crop: 99
+  coal: 99
+  iron_ingot: 99
+  bucket: 99
+  tin_ore: 99
+  copper_ore: 99
+  tin_ingot: 99
   copper_ingot: 0
   brass_ingot: 0
   steam_engine: 0
@@ -104766,8 +104781,9 @@ GameObject:
   - component: {fileID: 1993617081}
   - component: {fileID: 1993617080}
   - component: {fileID: 1993617083}
+  - component: {fileID: 1993617084}
   m_Layer: 4
-  m_Name: Impassable
+  m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110530,6 +110546,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillingTime: 2
+--- !u!114 &1993617084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993617078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cd50352f4d1dc40a2c098bc1dbc946, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1998520804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4665827501235454168, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
@@ -112342,6 +112370,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536162961608221587, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5536162961608221587, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6399643339214200484, guid: 4bba7b09bd8d5214ca05ef5874ca3a8d,
         type: 3}
