@@ -8,6 +8,8 @@ public class InventoryScript : MonoBehaviour
 {
     private bool showInventory = false;
     private GameObject inventoryUI;
+    private GameObject minimap;
+    private GameObject minimapBorder;
 
 
     public GameObject house;
@@ -103,7 +105,12 @@ public class InventoryScript : MonoBehaviour
         // Alchemy resources
 
         inventoryUI = GameObject.Find("Inventory");
+        minimap = GameObject.Find("Minimap");
+        minimapBorder = GameObject.Find("MinimapBorder");
+
         inventoryUI.gameObject.SetActive(false);
+        minimap.gameObject.SetActive(true);
+        minimapBorder.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -143,7 +150,11 @@ public class InventoryScript : MonoBehaviour
         // Open/Close Inventory
         if (Input.GetKeyDown("e"))
         {
+        
             showInventory = !showInventory;
+           
+            minimap.gameObject.SetActive(!showInventory);
+            minimapBorder.gameObject.SetActive(!showInventory);
             inventoryUI.gameObject.SetActive(showInventory);
         }
     }
