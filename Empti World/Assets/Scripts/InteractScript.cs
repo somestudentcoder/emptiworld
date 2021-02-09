@@ -7,6 +7,11 @@ public class InteractScript : MonoBehaviour
 {
     private PlayerScript player;
 
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<PlayerScript>();
+    }
+
     void Update()
     {
         if(PlayerIsInteracting()){
@@ -16,7 +21,7 @@ public class InteractScript : MonoBehaviour
 
     public bool PlayerIsInteracting()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !player.blocked)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -30,7 +35,6 @@ public class InteractScript : MonoBehaviour
                 if(water != null){
                     // gameobject is water
                     Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    player = GameObject.Find("Player").GetComponent<PlayerScript>();
                     float distance = Vector2.Distance(mouse_position, player.transform.position);
                     
                     
@@ -52,7 +56,6 @@ public class InteractScript : MonoBehaviour
                     if(trigger_collider == null){
                         return false;
                     }
-                    player = GameObject.Find("Player").GetComponent<PlayerScript>();
                     Vector2 distance_vector = (Vector2)player.transform.position - ((Vector2)(gameObject.transform.position) + trigger_collider.offset);
                     float distance_x = Mathf.Abs(distance_vector.x) - (trigger_collider.size.x / 2);
                     float distance_y = Mathf.Abs(distance_vector.y) - (trigger_collider.size.y / 2);

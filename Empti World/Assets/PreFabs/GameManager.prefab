@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9118555128225208497}
   - component: {fileID: 1521105891}
   - component: {fileID: 1521105892}
-  - component: {fileID: 887914102}
+  - component: {fileID: 8455334167393582440}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 100
-  continousDamageEnabled: 0
-  continousDamage: 20
 --- !u!114 &1521105892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,9 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14b6b4dbc6504844bbbb6f298a2ff85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SeasonCooldown: 3
+  SeasonCooldown: 600
+  StormCooldown: 60
   currentSeason: 0
---- !u!114 &887914102
+  snow: {fileID: 0}
+--- !u!114 &8455334167393582440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,18 +71,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5835231974117881058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54abae5b6a2727840aafefbde7e5d15f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dea80376ca391b41ba899b0e6f6e1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cable: 0
-  microchip: 0
-  stone: 0
-  iron: 0
-  coal: 0
-  wood: 0
-  water: 0
-  crop: 0
-  oven: 0
-  bucket: 0
-  steam_engine: 0
-  brass_pipe: 0
+  standardRock: {fileID: 21300000, guid: dc2890e401b395f63a8f2983db4e8fd0, type: 3}
+  tinRock: {fileID: 21300000, guid: f1ec1816f47ae5f91bdd7e4a6997ccf2, type: 3}
+  copperRock: {fileID: 21300000, guid: e467023f424600dfebb1b53eb6843e19, type: 3}
+  stone: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
+  tinOre: {fileID: 1946955152385664260, guid: 1a42edb176e9a1250bdfc4bd4f046cd3, type: 3}
+  copperOre: {fileID: 420257579661754751, guid: 52c14becfb0cbe8dea0f398a439149eb,
+    type: 3}
+  tinRocksCount: 2
+  copperRocksCount: 2
+  spawnCooldownSec: 5

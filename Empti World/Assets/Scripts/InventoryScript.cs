@@ -148,24 +148,25 @@ public class InventoryScript : MonoBehaviour
 
 
         // Open/Close Inventory
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") || Input.GetKeyDown(KeyCode.Escape))
         {
-            PlayerScript player = GetComponent<PlayerScript>();
-            if(player){
-                if(showInventory && player.blocked){
-                    player.loadingBar.gameObject.SetActive(true);
-                }
-                else{
-                    player.loadingBar.gameObject.SetActive(false);
-                }
-            }
-            
-            
             showInventory = !showInventory;
            
             minimap.gameObject.SetActive(!showInventory);
             minimapBorder.gameObject.SetActive(!showInventory);
             inventoryUI.gameObject.SetActive(showInventory);
+
+            PlayerScript player = GetComponent<PlayerScript>();
+            if(player){
+                if(showInventory){
+                    player.blocked = true;
+                    player.loadingBar.gameObject.SetActive(false);
+                }
+                else
+                {
+                    player.blocked = false;
+                }
+            }
         }
     }
 
