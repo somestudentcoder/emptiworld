@@ -54,10 +54,8 @@ public class InteractScript : MonoBehaviour
                     }
                     player = GameObject.Find("Player").GetComponent<PlayerScript>();
                     Vector2 distance_vector = (Vector2)player.transform.position - ((Vector2)(gameObject.transform.position) + trigger_collider.offset);
-                    Debug.Log(distance_vector);
                     float distance_x = Mathf.Abs(distance_vector.x) - (trigger_collider.size.x / 2);
                     float distance_y = Mathf.Abs(distance_vector.y) - (trigger_collider.size.y / 2);
-                    Debug.Log(distance_x);
                     if (distance_x <= 1 && distance_y <= 1)
                     {
                         return true;

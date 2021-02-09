@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject toolTip;
+    public bool makeLastSibling = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,10 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.SetAsLastSibling();
+        if(makeLastSibling){
+            transform.SetAsLastSibling();
+        }
+        
         toolTip.SetActive(true);
     }
 
