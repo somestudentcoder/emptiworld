@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PickUpScript : MonoBehaviour
 {
@@ -28,7 +30,9 @@ public class PickUpScript : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         player = GameObject.FindWithTag("Player");
         inventory = GameObject.Find("Player").GetComponent<InventoryScript>();
-        offset = Random.insideUnitCircle.normalized * 2.0f;
+        Vector3 random_vector = Random.insideUnitCircle;
+        random_vector.y = -math.abs(random_vector.y);
+        offset = random_vector.normalized * 2.0f;
         
         initial_position = transform.position;
         offset += initial_position;

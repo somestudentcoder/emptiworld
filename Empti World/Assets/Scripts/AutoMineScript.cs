@@ -23,7 +23,7 @@ public class AutoMineScript : MonoBehaviour
         if (currentMiningTime <= 0)
         {
             currentMiningTime = miningFrequency;
-            Instantiate(rock, transform.position + new Vector3(0.0f + Random.Range(-0.7f, 0.7f), -3.5f + Random.Range(-0.1f, 0.1f), -1.0f), Quaternion.identity);
+            Instantiate(rock, transform.position + Vector3.down, Quaternion.identity);
         }
     }
 }

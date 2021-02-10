@@ -281,7 +281,7 @@ public class InventoryScript : MonoBehaviour
             stone -= required_stone;
             wood -= required_wood;
 
-            Instantiate(mine, new Vector3(20, 27, 5), Quaternion.identity);
+            Instantiate(mine, new Vector3(20, 27, 0), Quaternion.identity);
         }
     }
 
