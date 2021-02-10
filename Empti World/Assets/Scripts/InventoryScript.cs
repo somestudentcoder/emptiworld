@@ -74,6 +74,9 @@ public class InventoryScript : MonoBehaviour
     // Upgrades
     public bool oven_upgrade = false;
 
+    // Monologue
+    private GameObject monologue;
+
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +114,9 @@ public class InventoryScript : MonoBehaviour
         inventoryUI.gameObject.SetActive(false);
         minimap.gameObject.SetActive(true);
         minimapBorder.gameObject.SetActive(true);
+
+        //store monologue for displaying and hiding
+        monologue = GameObject.Find("Monologue");
     }
 
     // Update is called once per frame
@@ -151,6 +157,11 @@ public class InventoryScript : MonoBehaviour
         if (Input.GetKeyDown("e") || Input.GetKeyDown(KeyCode.Escape))
         {
             showInventory = !showInventory;
+
+            if(monologue.GetComponent<MonologueManagerScript>().active)
+            {
+                monologue.SetActive(!monologue.activeSelf);
+            }
            
             minimap.gameObject.SetActive(!showInventory);
             minimapBorder.gameObject.SetActive(!showInventory);
