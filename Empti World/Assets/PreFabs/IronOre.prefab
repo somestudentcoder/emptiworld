@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pick_up_range: 4
   smooth_time: 0.3
-  resource_name: Iron
+  resource_name: Iron Ore
   amount: 1
   initial_travel_time: 0.3
 --- !u!50 &5504575581627323571

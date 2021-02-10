@@ -7,13 +7,16 @@ public class MaterialSpawningScript : MonoBehaviour
     public Sprite standardRock;
     public Sprite tinRock;
     public Sprite copperRock;
+    public Sprite ironRock;
 
     public GameObject stone;
     public GameObject tinOre;
     public GameObject copperOre;
+    public GameObject ironOre;
 
     public int tinRocksCount = 2;
     public int copperRocksCount = 2;
+    public int ironRocksCount = 2;
     
     public int spawnCooldownSec = 5;
     
@@ -56,6 +59,10 @@ public class MaterialSpawningScript : MonoBehaviour
                 script.rock = copperOre;
                 rock.GetComponent<SpriteRenderer>().sprite = copperRock;
                 break;
+            case "Iron":
+                script.rock = ironOre;
+                rock.GetComponent<SpriteRenderer>().sprite = ironRock;
+                break;
         }
     }
 
@@ -76,7 +83,6 @@ public class MaterialSpawningScript : MonoBehaviour
     
     void initResources()
     {
-        GameObject[] rocks = GameObject.FindGameObjectsWithTag("Stone");
         for (int i = 0; i < tinRocksCount; i++)
         {
             createRandomSpecial("Tin");
@@ -85,7 +91,10 @@ public class MaterialSpawningScript : MonoBehaviour
         {
             createRandomSpecial("Copper");
         }
-        
+        for (int i = 0; i < ironRocksCount; i++)
+        {
+            createRandomSpecial("Iron");
+        }
     }
 
     IEnumerator waitforCooldown(string resource_name)

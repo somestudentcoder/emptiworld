@@ -28,8 +28,6 @@ public class SeasonalMeterScript : MonoBehaviour
         target =   position + Vector3.right * (seasonal_meter.GetComponent<RectTransform>().rect.width - 10);
         target.y = start_position.y;
         t = 0;
-        Debug.Log(start_position);
-        Debug.Log(target);
     }
 
     // Update is called once per frame
@@ -37,9 +35,7 @@ public class SeasonalMeterScript : MonoBehaviour
     {
         t += Time.deltaTime/game_time;
         seasonal_meter_position.transform.position = Vector3.Lerp(start_position, target, t);
-
-        Debug.Log("Inventory active" + inventory.activeSelf);
-        Debug.Log("Minimap Active" + inventory.activeSelf);
+        
         if (inventory.activeSelf || minimap.activeSelf)
         {
             seasonal_meter.GetComponent<Image>().enabled = false;
