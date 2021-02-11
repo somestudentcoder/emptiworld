@@ -379,7 +379,7 @@ public class InventoryScript : MonoBehaviour
                 stone += amount;
                 break;
             case "Iron Ore":
-                iron_ingot += amount;
+                iron_ore += amount;
                 break;
             case "Wood":
                 wood += amount;
