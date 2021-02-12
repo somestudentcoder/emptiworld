@@ -116515,7 +116515,7 @@ PrefabInstance:
       objectReference: {fileID: 401607475}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown
-      value: 15
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: sand
