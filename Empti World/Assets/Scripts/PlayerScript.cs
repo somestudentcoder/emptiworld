@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,6 +38,8 @@ public class PlayerScript : MonoBehaviour
     private Vector3 movement;
     private Camera mainCamera;
     private GameObject gm;
+    private Animator animator;
+    private SpriteRenderer sprite;
 
 
 
@@ -47,6 +50,8 @@ public class PlayerScript : MonoBehaviour
         gm = GameObject.Find("GameManager");
         loadingBar.gameObject.SetActive(false);
         if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
 
         halfheight = Camera.main.orthographicSize;
         halfwidth =  halfheight * Camera.main.aspect;
@@ -61,6 +66,25 @@ public class PlayerScript : MonoBehaviour
     {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
+
+        if (inputX < 0 && sprite.flipX == false)
+        {
+            sprite.flipX = true;
+        }
+        else if (inputX > 0 && sprite.flipX)
+        {
+            sprite.flipX = false;
+        }
+
+        if ((math.abs(inputX) > 0 || math.abs(inputY) > 0) && !blocked)
+        {
+            animator.SetBool("walking", true);
+        }
+        else
+        {
+            animator.SetBool("walking", false);
+        }
+        
 
         movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 

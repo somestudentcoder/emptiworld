@@ -14,6 +14,8 @@ public class SeasonalMeterScript : MonoBehaviour
     public GameObject minimap;
 
     public GameObject inventory;
+
+    public GameObject end;
     
     private Vector3 start_position;
     private Vector3 target;
@@ -24,9 +26,12 @@ public class SeasonalMeterScript : MonoBehaviour
     void Start()
     {
         start_position = seasonal_meter_position.transform.position;
-        Vector3 position = seasonal_meter.GetComponent<RectTransform>().rect.position;
-        target =   position + Vector3.right * (seasonal_meter.GetComponent<RectTransform>().rect.width - 10);
+        RectTransform position = seasonal_meter.GetComponent<RectTransform>();
+        Image image = seasonal_meter.GetComponent<Image>();
+        Debug.Log(start_position);
+        target =   end.transform.position;
         target.y = start_position.y;
+        Debug.Log(target);
         t = 0;
     }
 
