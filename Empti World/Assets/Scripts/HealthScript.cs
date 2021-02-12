@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
-    private Color green = new Color(0,176,0);
-    private Color orange = new Color(255,110,0);
-    private Color red = new Color(253,0,0);
+    private Color green = new Color32(102, 132, 95, 255);
+    private Color orange = new Color32(184,99,67, 255);
+    private Color red = new Color32(182,92,95, 255);
 
     public int healthPoints = 100;
 
