@@ -13,6 +13,7 @@ public class SeasonScript : MonoBehaviour
     private float[] SeasonTimers;
     public int currentSeason;
     public GameObject snow;
+    public GameObject sand;
     private GameObject player;
     private GameObject stormindicator;
 
@@ -93,14 +94,7 @@ public class SeasonScript : MonoBehaviour
     void nextSeason()
     {
         currentSeason++;
-        if (currentSeason == 3)
-        {
-            snow.SetActive(true);
-        }
-        else
-        {
-            snow.SetActive(false);
-        }
+        
         if(currentSeason > 3)
         {
             currentSeason = 0;
@@ -114,6 +108,14 @@ public class SeasonScript : MonoBehaviour
 
     void triggerStorm()
     {
+        if (currentSeason == 3)
+        {
+            snow.SetActive(true);
+        }
+        else
+        {
+            sand.SetActive(true);
+        }
         stormActive = true;
         visualStorm(stormActive);
         audibleStorm(stormActive);
@@ -121,6 +123,8 @@ public class SeasonScript : MonoBehaviour
 
     void byeStorm()
     {
+        snow.SetActive(false);
+        sand.SetActive(false);
         stormActive = false;
         visualStorm(stormActive);
         audibleStorm(stormActive);
