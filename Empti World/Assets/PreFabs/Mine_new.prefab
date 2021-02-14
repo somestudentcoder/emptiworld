@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84fd0b657c9d6143b96130b14b54eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rock: {fileID: 832956754170630179, guid: 443344789cfbce776947dec28bf066d2, type: 3}
-  miningFrequency: 3
+  rock: {fileID: 7055328874344569062, guid: ead63b34de32a6e06ae7f9bdb31103e5, type: 3}
+  miningFrequency: 8
 --- !u!114 &2588498612239383356
 MonoBehaviour:
   m_ObjectHideFlags: 0

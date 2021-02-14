@@ -9,7 +9,7 @@ public class SeasonalMeterScript : MonoBehaviour
 
     public GameObject seasonal_meter_position;
 
-    public float game_time = 600;
+    public float game_time;
 
     public GameObject minimap;
 
@@ -28,11 +28,10 @@ public class SeasonalMeterScript : MonoBehaviour
         start_position = seasonal_meter_position.transform.position;
         RectTransform position = seasonal_meter.GetComponent<RectTransform>();
         Image image = seasonal_meter.GetComponent<Image>();
-        Debug.Log(start_position);
         target =   end.transform.position;
         target.y = start_position.y;
-        Debug.Log(target);
         t = 0;
+        game_time = GameObject.Find("GameManager").GetComponent<SeasonScript>().SeasonCooldown * 4;
     }
 
     // Update is called once per frame

@@ -57,6 +57,7 @@ public class FarmingFieldScript : MonoBehaviour
     		if (currentActionTime <= 0)
             {
                 player.loadingBar.gameObject.SetActive(false);
+                player.busy = false;
                 currentActionTime = actionTime;
                 player.blocked = false;
                 player = null;

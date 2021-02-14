@@ -25,6 +25,9 @@ public class PlayerScript : MonoBehaviour
     public float regenCoolDown;
     private float regenTimer;
 
+    public bool inhouse = false;
+    public bool busy = false;
+
     public bool heatDamageProne = true;
     public bool coldDamageProne = true;
 

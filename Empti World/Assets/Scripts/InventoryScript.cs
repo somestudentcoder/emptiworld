@@ -69,6 +69,11 @@ public class InventoryScript : MonoBehaviour
     public int steam_engine = 0;
     public int engine_fuel = 0;
 
+    public bool house_built = false;
+    public bool oven_built = false;
+    public bool mine_built = false;
+    public bool sawmill_built = false;
+
     // Alchemy resources
 
     // Upgrades
@@ -173,6 +178,14 @@ public class InventoryScript : MonoBehaviour
                     player.blocked = true;
                     player.loadingBar.gameObject.SetActive(false);
                 }
+                else if(!showInventory && player.busy)
+                {
+                    player.loadingBar.gameObject.SetActive(true);
+                }
+                else if(!showInventory && player.inhouse)
+                {
+                    return;
+                }
                 else
                 {
                     player.blocked = false;
@@ -183,6 +196,11 @@ public class InventoryScript : MonoBehaviour
 
     public void craftOven()
     {
+        if(oven_built)
+        {
+            return;
+        }
+
         // Required resources
         const int required_stone = 8;
 
@@ -193,6 +211,7 @@ public class InventoryScript : MonoBehaviour
             oven_upgrade = true;
             Instantiate(oven, new Vector3(0, 0, 0), Quaternion.identity);
         }
+        oven_built = true;
     }
 
     public void craftCoal()
@@ -251,6 +270,11 @@ public class InventoryScript : MonoBehaviour
 
     public void craftBasicHouse()
     {
+        if(house_built)
+        {
+            return;
+        }
+
         // Required resources
         const int required_iron_ingot = 4;
         const int required_stone = 8;
@@ -266,10 +290,17 @@ public class InventoryScript : MonoBehaviour
 
             Instantiate(house, new Vector3(2, 5, 0), Quaternion.identity);
         }
+
+        house_built = true;
     }
 
     public void craftMine()
     {
+        if(mine_built)
+        {
+            return;
+        }
+
         // Required resources
         const int required_iron_ingot = 8;
         const int required_stone = 8;
@@ -283,10 +314,17 @@ public class InventoryScript : MonoBehaviour
 
             Instantiate(mine, new Vector3(20, 27, 0), Quaternion.identity);
         }
+
+        mine_built = true;
     }
 
     public void craftSawmill()
     {
+        if(sawmill_built)
+        {
+            return;
+        }
+
         // Required resources
         const int required_iron_ingot = 8;
         const int required_stone = 8;
@@ -300,6 +338,8 @@ public class InventoryScript : MonoBehaviour
 
             Instantiate(sawmill, new Vector3(-44, 34, 0), Quaternion.identity);
         }
+
+        sawmill_built = true;
     }
 
 

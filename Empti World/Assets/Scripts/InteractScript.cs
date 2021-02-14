@@ -21,7 +21,7 @@ public class InteractScript : MonoBehaviour
 
     public bool PlayerIsInteracting()
     {
-        if (Input.GetMouseButtonDown(0) && !player.blocked)
+        if (Input.GetMouseButtonDown(0) && (!player.blocked || player.inhouse))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -73,6 +73,7 @@ public class InteractScript : MonoBehaviour
 
     public void interact(PlayerScript player)
     {
+        player.busy = true;
         player.loadingBar.gameObject.SetActive(true);
         Camera cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         Vector3 screenPos = cam.WorldToScreenPoint(player.transform.position);
@@ -103,7 +104,7 @@ public class InteractScript : MonoBehaviour
         {
             player.loadingBar.gameObject.SetActive(false);
             GetComponent<HouseScript>().interact();
+            player.busy = false;
         }
-        
     }
 }

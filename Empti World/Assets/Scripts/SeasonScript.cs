@@ -15,7 +15,13 @@ public class SeasonScript : MonoBehaviour
     public GameObject snow;
     public GameObject sand;
     private GameObject player;
-    private GameObject stormindicator;
+
+    // Storm warnings
+    private GameObject Monologue;
+    public Content summer_warning;
+    private bool summer_warned = false;
+    public Content winter_warning;
+    private bool winter_warned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +30,6 @@ public class SeasonScript : MonoBehaviour
         setTimers();
 
         player = GameObject.Find("Player");
-        stormindicator = GameObject.Find("Storm Activity Indicator");
-        stormindicator.SetActive(false);
 
         GameObject grass_tilemap = GameObject.Find("Grass");
         GameObject ground_tilemap = GameObject.Find("Ground");
@@ -34,6 +38,8 @@ public class SeasonScript : MonoBehaviour
         tilemaps.Add(ground_tilemap.GetComponentInChildren<Tilemap>());
         tilemaps.Add(water_tilemap.GetComponentInChildren<Tilemap>());
         refreshAllTileMaps();
+
+        Monologue = GameObject.Find("Monologue");
     }
 
     void refreshAllTileMaps()
@@ -79,15 +85,33 @@ public class SeasonScript : MonoBehaviour
                 }
             }
         }
-        //Season change or Storm trigger
+        //Season change
         if(SeasonTimers[currentSeason] <= 0)
         {
             nextSeason();
         }
-        else if((SeasonTimers[currentSeason] < (SeasonCooldown / 2.0f) + StormCooldown/2.0f) 
-            && (SeasonTimers[currentSeason] > (SeasonCooldown / 2.0f) - StormCooldown/2.0f) && (currentSeason == 1 || currentSeason == 3))
+        // Time for storm warning
+        else if((SeasonTimers[currentSeason] < (SeasonCooldown / 2.0f) + StormCooldown)
+            && ((currentSeason == 1 && !summer_warned) || (currentSeason == 3 && !winter_warned)))
         {
-            triggerStorm();
+            if(currentSeason == 1)
+            {
+                StormWarning(0);
+            }
+            else
+            {
+                StormWarning(1);
+            }
+        }
+        // Trigger Storm
+        else if((SeasonTimers[currentSeason] < (SeasonCooldown / 2.0f) + StormCooldown/2.0f) 
+            && (SeasonTimers[currentSeason] > (SeasonCooldown / 2.0f) - StormCooldown/2.0f) 
+            && (currentSeason == 1 || currentSeason == 3))
+        {
+            if(!stormActive)
+            {
+                triggerStorm();
+            }    
         }
     }
 
@@ -106,16 +130,24 @@ public class SeasonScript : MonoBehaviour
         changeMusic();
     }
 
-    void triggerStorm()
+    void StormWarning(int season_indicator)
     {
-        if (currentSeason == 3)
+        Monologue.SetActive(true);
+        MonologueManagerScript mm = Monologue.GetComponent<MonologueManagerScript>();
+        if(season_indicator == 0)
         {
-            snow.SetActive(true);
+            mm.StartMonologue(summer_warning);
+            summer_warned = true;
         }
         else
         {
-            sand.SetActive(true);
+            mm.StartMonologue(winter_warning);
+            winter_warned = true;
         }
+    }
+
+    void triggerStorm()
+    {
         stormActive = true;
         visualStorm(stormActive);
         audibleStorm(stormActive);
@@ -123,8 +155,6 @@ public class SeasonScript : MonoBehaviour
 
     void byeStorm()
     {
-        snow.SetActive(false);
-        sand.SetActive(false);
         stormActive = false;
         visualStorm(stormActive);
         audibleStorm(stormActive);
@@ -132,18 +162,34 @@ public class SeasonScript : MonoBehaviour
 
     void visualStorm(bool active)
     {
-        stormindicator.SetActive(active);
+        if(active)
+        {
+            if (currentSeason == 3)
+            {
+                snow.SetActive(true);
+            }
+            else
+            {
+                sand.SetActive(true);
+            }
+        }
+        else
+        {
+            snow.SetActive(false);
+            sand.SetActive(false);
+        }
+        
     }
 
     void audibleStorm(bool active)
     {
         if(active)
         {
-
+            //TODO
         }
         else
         {
-
+            //TODO
         }
     }
 

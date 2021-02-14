@@ -54,6 +54,7 @@ public class MonologueManagerScript : MonoBehaviour
     public void EndMonologue()
     {	
     	active = false;
+    	content.Clear();
     	GameObject.Find("Monologue").SetActive(false);
     }
 }

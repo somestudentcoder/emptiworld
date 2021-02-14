@@ -28,6 +28,7 @@ public class WaterScript : MonoBehaviour
             if (currentFillingTime <= 0)
             {
                 player.loadingBar.gameObject.SetActive(false);
+                player.busy = false;
                 currentFillingTime = fillingTime;
                 filling = false;
                 player.blocked = false;

@@ -18,14 +18,16 @@ public class HouseScript : MonoBehaviour
     {
         GameObject player = GameObject.Find("Player");
 
-        if(player.GetComponent<PlayerScript>().blocked)
+        if(player.GetComponent<PlayerScript>().inhouse)
         {
+            player.GetComponent<PlayerScript>().inhouse = false;
             player.GetComponent<PlayerScript>().blocked = false;
             player.GetComponent<PlayerScript>().heatDamageProne = true;
             player.GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
+            player.GetComponent<PlayerScript>().inhouse = true;
             player.GetComponent<PlayerScript>().blocked = true;
             player.GetComponent<PlayerScript>().heatDamageProne = false;
             player.GetComponent<SpriteRenderer>().enabled = false;

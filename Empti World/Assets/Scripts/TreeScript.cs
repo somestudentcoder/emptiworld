@@ -41,6 +41,7 @@ public class TreeScript : MonoBehaviour
             if (currentFellingTime <= 0)
             {
                 player.loadingBar.gameObject.SetActive(false);
+                player.busy = false;
                 fellTree();
                 currentFellingTime = fellingTime;
 
