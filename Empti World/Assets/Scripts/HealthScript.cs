@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class HealthScript : MonoBehaviour
         if(healthPoints <= 0)
         {
             healthPoints = 0;
+            gameOver();
         }
         else
         {
@@ -74,5 +76,10 @@ public class HealthScript : MonoBehaviour
     {
 
         Bar.GetComponent<Slider>().value = healthPoints;
+    }
+
+    private void gameOver() {
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+
     }
 }

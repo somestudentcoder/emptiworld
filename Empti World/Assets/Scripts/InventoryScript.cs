@@ -82,6 +82,10 @@ public class InventoryScript : MonoBehaviour
     // Monologue
     private GameObject monologue;
 
+    // Pause Menu
+    private GameObject menu;
+    private bool showMenu = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -122,6 +126,10 @@ public class InventoryScript : MonoBehaviour
 
         //store monologue for displaying and hiding
         monologue = GameObject.Find("Monologue");
+
+        // Pause Menu
+        menu = GameObject.Find("PauseMenu");
+        menu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -159,7 +167,7 @@ public class InventoryScript : MonoBehaviour
 
 
         // Open/Close Inventory
-        if (Input.GetKeyDown("e") || Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown("e") || (showInventory && Input.GetKeyDown(KeyCode.Escape)))
         {
             showInventory = !showInventory;
 
@@ -191,7 +199,17 @@ public class InventoryScript : MonoBehaviour
                     player.blocked = false;
                 }
             }
+        } else {
+            // Handle Pause Menu      
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+                handleMenu();
+            }
         }
+    }
+
+    public void handleMenu() {
+        showMenu = !showMenu;
+        menu.gameObject.SetActive(showMenu);
     }
 
     public void craftOven()

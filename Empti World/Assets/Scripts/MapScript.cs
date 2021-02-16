@@ -28,10 +28,5 @@ public class MapScript : MonoBehaviour
         map.gameObject.SetActive(false);
         mapBorder.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
