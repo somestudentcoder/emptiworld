@@ -97318,7 +97318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -732, y: -457.07837}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &841072505
@@ -100330,6 +100330,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1241739696}
     m_Modifications:
+    - target: {fileID: 5083525609660657274, guid: 10367b5939db8854c8f5403ba5238a54,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083525609660657274, guid: 10367b5939db8854c8f5403ba5238a54,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083525609660657274, guid: 10367b5939db8854c8f5403ba5238a54,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083525609660657274, guid: 10367b5939db8854c8f5403ba5238a54,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083525610203795517, guid: 10367b5939db8854c8f5403ba5238a54,
+        type: 3}
+      propertyPath: spriteArray.Array.data[1].sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: -4219001029505858608, guid: 5725fef65e0fd070b9ba0bc6979fa43f,
+        type: 3}
     - target: {fileID: 7937880152448757447, guid: 10367b5939db8854c8f5403ba5238a54,
         type: 3}
       propertyPath: m_Name

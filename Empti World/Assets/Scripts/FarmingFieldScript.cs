@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [System.Serializable]
@@ -14,7 +15,9 @@ public class FarmingFieldScript : MonoBehaviour
 	const int GROWING = 1;
 	const int DONE = 2;
 
+	public GameObject cropPickUp;
 	public GameObject crop;
+	private GameObject cropInstance;
 
     public float actionTime;
     private float currentActionTime;
@@ -64,6 +67,7 @@ public class FarmingFieldScript : MonoBehaviour
                 planting = false;
                 growing = true;
                 changeSprite();
+                createCrop();
             }
     	}
     	else if(growing)
@@ -74,7 +78,8 @@ public class FarmingFieldScript : MonoBehaviour
                 currentGrowTime = growTime;
                 growing = false;
                 done = true;
-                changeSprite();
+                //changeSprite();
+                changeCropSprite();
             }
     	}
     	else if(harvesting)
@@ -84,7 +89,7 @@ public class FarmingFieldScript : MonoBehaviour
     		if (currentActionTime <= 0)
             {
             	//DROPS WHEAT
-            	Instantiate(crop, transform.position, Quaternion.identity);
+            	Instantiate(cropPickUp, transform.position, Quaternion.identity);
                 player.loadingBar.gameObject.SetActive(false);
                 currentActionTime = actionTime;
                 done = false;
@@ -92,10 +97,21 @@ public class FarmingFieldScript : MonoBehaviour
 	            player.blocked = false;
 	            player = null;
 	            harvesting = false;
+	            Destroy(cropInstance);
             }
     	}
     }
 
+    void changeCropSprite()
+    {
+	    cropInstance.GetComponent<CropScript>().grow();
+    }
+    
+    void createCrop()
+    {
+	    cropInstance = Instantiate(crop, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+    }
+    
     public void seasonChange()
     {
         //Debug.Log(seasonScript.currentSeason);

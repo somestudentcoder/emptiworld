@@ -132,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000047683716, y: -0.0043507814}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7389536, y: 0.69544625}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5083525610203795517
 MonoBehaviour:
@@ -157,23 +157,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f3419525a1a224c82c7ce433dd4603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crop: {fileID: 3275500662602704066, guid: 4ff0683417e3e5643b60643144dd4e8b, type: 3}
+  cropPickUp: {fileID: 3275500662602704066, guid: 4ff0683417e3e5643b60643144dd4e8b,
+    type: 3}
+  crop: {fileID: 2981322447805243018, guid: 10fe796e048a599dabc661503cdcfb09, type: 3}
   actionTime: 2
   growTime: 4
   spriteArray:
   - sprites:
     - {fileID: -6833219676223801517, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
     - {fileID: -8909314643442656021, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}
-    - {fileID: 21300000, guid: cdc89ccb59e2b734681f47e3eb827c29, type: 3}
   - sprites:
     - {fileID: -902754245555903395, guid: 5725fef65e0fd070b9ba0bc6979fa43f, type: 3}
     - {fileID: -4098919717329975339, guid: 5725fef65e0fd070b9ba0bc6979fa43f, type: 3}
-    - {fileID: 21300000, guid: cdc89ccb59e2b734681f47e3eb827c29, type: 3}
   - sprites:
     - {fileID: -820393777154259395, guid: 34682bec84560ab629d1c3b8e0a45353, type: 3}
     - {fileID: -9056816305074558798, guid: 34682bec84560ab629d1c3b8e0a45353, type: 3}
-    - {fileID: 21300000, guid: cdc89ccb59e2b734681f47e3eb827c29, type: 3}
   - sprites:
     - {fileID: -9067296539148790072, guid: f916326e66f21ce8693a6c766af13e3c, type: 3}
     - {fileID: 1936281651774372622, guid: f916326e66f21ce8693a6c766af13e3c, type: 3}
-    - {fileID: 21300000, guid: cdc89ccb59e2b734681f47e3eb827c29, type: 3}
