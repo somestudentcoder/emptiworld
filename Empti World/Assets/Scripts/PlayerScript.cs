@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     public bool blocked = false;
 
     public Slider loadingBar;
+    public GameObject walkParticles;
 
     public Vector2 speed = new Vector2(10, 10);
     //public bool interactPossible = false;
@@ -70,11 +71,11 @@ public class PlayerScript : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
 
-        if (inputX < 0 && sprite.flipX == false)
+        if (inputX < 0 && sprite.flipX == false && !blocked)
         {
             sprite.flipX = true;
         }
-        else if (inputX > 0 && sprite.flipX)
+        else if (inputX > 0 && sprite.flipX && !blocked)
         {
             sprite.flipX = false;
         }
@@ -82,10 +83,12 @@ public class PlayerScript : MonoBehaviour
         if ((math.abs(inputX) > 0 || math.abs(inputY) > 0) && !blocked)
         {
             animator.SetBool("walking", true);
+            walkParticles.SetActive(true);
         }
         else
         {
             animator.SetBool("walking", false);
+            walkParticles.SetActive(false);
         }
         
 
