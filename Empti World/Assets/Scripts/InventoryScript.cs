@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
-    private bool showInventory = false;
+    public bool showInventory = false;
     private GameObject inventoryUI;
     private GameObject minimap;
     private GameObject minimapBorder;

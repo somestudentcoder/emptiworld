@@ -7,8 +7,16 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     public GameObject toolTip;
     public bool makeLastSibling = true;
+
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
+    {
+        toolTip.SetActive(false);
+        player = GameObject.Find("Player");
+    }
+
+    void OnDisable()
     {
         toolTip.SetActive(false);
     }
