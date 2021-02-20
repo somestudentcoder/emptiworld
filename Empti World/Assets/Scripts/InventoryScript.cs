@@ -210,6 +210,7 @@ public class InventoryScript : MonoBehaviour
     public void handleMenu() {
         showMenu = !showMenu;
         menu.gameObject.SetActive(showMenu);
+        Time.timeScale = showMenu ? 0 : 1;
     }
 
     public void craftOven()
