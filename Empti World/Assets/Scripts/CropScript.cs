@@ -20,6 +20,6 @@ public class CropScript : MonoBehaviour
     public void grow()
     {
         GetComponent<SpriteRenderer>().sprite = grownSprite;
-        transform.position += Vector3.up * 0.5f;
+        //transform.position += Vector3.up * 0.5f;
     }
 }
