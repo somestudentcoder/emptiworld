@@ -23,7 +23,7 @@ public class AutoSawmillScript : MonoBehaviour
         if (currentFellingTime <= 0)
         {
             currentFellingTime = fellingFrequency;
-            Instantiate(log, transform.position + new Vector3(0.0f + Random.Range(-0.7f, 0.7f), -3.5f + Random.Range(-0.1f, 0.1f), -1.0f), Quaternion.identity);
+            Instantiate(log, transform.position, Quaternion.identity);
         }
     }
 }
