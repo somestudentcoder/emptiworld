@@ -61,7 +61,8 @@ public class TreeScript : MonoBehaviour
 
     public void seasonChange()
     {
-        spriteRenderer.sprite = spriteArray[GameObject.Find("GameManager").GetComponentInChildren<SeasonScript>().currentSeason];
+        if (regrowing != true)
+            spriteRenderer.sprite = spriteArray[GameObject.Find("GameManager").GetComponentInChildren<SeasonScript>().currentSeason];
     }
 
     private void fellTree()
