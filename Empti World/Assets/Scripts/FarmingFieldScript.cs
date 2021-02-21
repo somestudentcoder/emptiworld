@@ -143,6 +143,8 @@ public class FarmingFieldScript : MonoBehaviour
 
     public void interact(PlayerScript ply)
     {
+        SoundEffectsHelperScript.Instance.playDigSound();
+
     	if(!done && !growing)
     	{
     		player = ply;

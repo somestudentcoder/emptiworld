@@ -17,6 +17,7 @@ public class HouseScript : MonoBehaviour
     public void interact()
     {
         GameObject player = GameObject.Find("Player");
+        SoundEffectsHelperScript.Instance.playDoorSound();
 
         if(player.GetComponent<PlayerScript>().inhouse)
         {

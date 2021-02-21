@@ -462,5 +462,6 @@ public class InventoryScript : MonoBehaviour
                 Debug.Log("This resource is not known: " + resource_name);
                 break;
         }
+        SoundEffectsHelperScript.Instance.playLootSound();
     }
 }

@@ -65,5 +65,6 @@ public class StoneScript : MonoBehaviour
         player = ply;
         player.blocked = true;
         beingMined = true;
+        SoundEffectsHelperScript.Instance.playMiningSound();
     }
 }

@@ -92,5 +92,6 @@ public class TreeScript : MonoBehaviour
         player = ply;
         player.blocked = true;
         beingFelled = true;
+        SoundEffectsHelperScript.Instance.playWoodCutSound();
     }
 }

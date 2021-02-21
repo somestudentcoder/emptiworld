@@ -29,6 +29,8 @@ public class HealthScript : MonoBehaviour
 
     public void damage(int dmg)
     {
+        SoundEffectsHelperScript.Instance.playPlayerHitSound();
+
         if(healthPoints <= 0)
         {
             healthPoints = 0;
