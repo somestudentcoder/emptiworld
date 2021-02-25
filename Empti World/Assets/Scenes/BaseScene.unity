@@ -115482,7 +115482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: StormCooldown
-      value: 60
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: summer_warning.content.Array.data[0]
