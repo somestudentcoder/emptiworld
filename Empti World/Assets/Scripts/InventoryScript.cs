@@ -171,9 +171,14 @@ public class InventoryScript : MonoBehaviour
         {
             showInventory = !showInventory;
 
+            //handle Monologue
             if(monologue.GetComponent<MonologueManagerScript>().active)
             {
                 monologue.SetActive(!monologue.activeSelf);
+                if(monologue.activeSelf)
+                {
+                    monologue.GetComponent<MonologueManagerScript>().RestartTyping();
+                }
             }
            
             minimap.gameObject.SetActive(!showInventory);

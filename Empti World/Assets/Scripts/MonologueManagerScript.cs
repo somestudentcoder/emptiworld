@@ -8,6 +8,7 @@ public class MonologueManagerScript : MonoBehaviour
 	private Queue<string> content = new Queue<string>();
 	public bool active;
 	public Text contentDisplay;
+	public string currentContent;
 
     public void StartMonologue(Content monologue)
     {
@@ -35,16 +36,22 @@ public class MonologueManagerScript : MonoBehaviour
     	}
     	else
     	{
-    		string currentContent = content.Dequeue();
+    		currentContent = content.Dequeue();
     		StopAllCoroutines();
-    		StartCoroutine(TypingSentence(currentContent));
+    		StartCoroutine(TypingSentence());
     	}
     }
 
-    IEnumerator TypingSentence(string content)
+    public void RestartTyping()
+    {
+    	StopAllCoroutines();
+        StartCoroutine(TypingSentence());
+    }
+
+    IEnumerator TypingSentence()
     {
     	contentDisplay.text = "";
-    	foreach(char letter in content.ToCharArray())
+    	foreach(char letter in currentContent.ToCharArray())
     	{
     		contentDisplay.text += letter;
     		yield return null;
