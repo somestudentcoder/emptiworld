@@ -109,7 +109,7 @@ public class FarmingFieldScript : MonoBehaviour
     
     void createCrop()
     {
-	    cropInstance = Instantiate(crop, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+	    cropInstance = Instantiate(crop, transform.position, Quaternion.identity);
     }
     
     public void seasonChange()
@@ -143,6 +143,8 @@ public class FarmingFieldScript : MonoBehaviour
 
     public void interact(PlayerScript ply)
     {
+        SoundEffectsHelperScript.Instance.playDigSound();
+
     	if(!done && !growing)
     	{
     		player = ply;

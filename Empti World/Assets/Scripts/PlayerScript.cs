@@ -84,13 +84,15 @@ public class PlayerScript : MonoBehaviour
         {
             animator.SetBool("walking", true);
             walkParticles.SetActive(true);
+            SoundEffectsHelperScript.Instance.playWalkingLoop();
         }
         else
         {
             animator.SetBool("walking", false);
             walkParticles.SetActive(false);
+            SoundEffectsHelperScript.Instance.stopWalkingLoop();
         }
-        
+
 
         movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
