@@ -22,11 +22,6 @@ public class HealthScript : MonoBehaviour
         Fill = GameObject.Find("Health Bar Fill");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
     public void damage(int dmg)
     {
         SoundEffectsHelperScript.Instance.playPlayerHitSound();

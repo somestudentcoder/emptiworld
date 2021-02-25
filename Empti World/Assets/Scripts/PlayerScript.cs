@@ -25,6 +25,8 @@ public class PlayerScript : MonoBehaviour
     private float damageTimer;
     public float regenCoolDown;
     private float regenTimer;
+    public float hungerCoolDown;
+    private float hungerTimer;
 
     public bool inhouse = false;
     public bool busy = false;
@@ -64,6 +66,7 @@ public class PlayerScript : MonoBehaviour
 
         damageTimer = damageCoolDown;
         regenTimer = regenCoolDown;
+        hungerTimer = hungerCoolDown;
     }
     // Update is called once per frame
     void Update()
@@ -95,6 +98,14 @@ public class PlayerScript : MonoBehaviour
 
 
         movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
+
+        //Hunger timer logic
+        hungerTimer -= Time.deltaTime;
+        if(hungerTimer <= 0)
+        {
+            hunger(10);
+            hungerTimer = hungerCoolDown;
+        }
 
         //Damage timer logic
         if(damageable == false)
@@ -169,6 +180,29 @@ public class PlayerScript : MonoBehaviour
 
     public void heal(int healing)
     {
-        gm.GetComponent<HealthScript>().heal(healing);
+        if(gm.GetComponent<HungerScript>().hungerPoints > 50)
+        {
+            gm.GetComponent<HealthScript>().heal(healing);
+        }
+    }
+
+    public void hunger(int hun)
+    {
+        if(damageable && gm.GetComponent<HungerScript>().hungerPoints <= 0)
+        {
+            damage(10);
+        }
+        else
+        {
+            gm.GetComponent<HungerScript>().hunger(hun);
+        }
+    }
+
+    public void eat(int foodies)
+    {
+        if(gm.GetComponent<HungerScript>().hungerPoints < 100)
+        {
+            gm.GetComponent<HungerScript>().eat(foodies);
+        }
     }
 }
