@@ -59,7 +59,7 @@ public class InteractScript : MonoBehaviour
                     Vector2 distance_vector = (Vector2)player.transform.position - ((Vector2)(gameObject.transform.position) + trigger_collider.offset);
                     float distance_x = Mathf.Abs(distance_vector.x) - (trigger_collider.size.x / 2);
                     float distance_y = Mathf.Abs(distance_vector.y) - (trigger_collider.size.y / 2);
-                    if (distance_x <= 1 && distance_y <= 1)
+                    if (distance_x <= 1.5 && distance_y <= 1.5)
                     {
                         return true;
                     }
@@ -105,6 +105,11 @@ public class InteractScript : MonoBehaviour
             player.loadingBar.gameObject.SetActive(false);
             GetComponent<HouseScript>().interact();
             player.busy = false;
+        }
+        else if(GetComponent<FuelScript>())
+        {
+            player.loadingBar.gameObject.SetActive(false);
+            GetComponent<FuelScript>().interact();
         }
     }
 }

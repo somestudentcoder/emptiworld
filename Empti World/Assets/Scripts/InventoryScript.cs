@@ -14,9 +14,9 @@ public class InventoryScript : MonoBehaviour
 
     public GameObject house;
     public GameObject oven;
-    public GameObject garden;
     public GameObject mine;
     public GameObject sawmill;
+    public GameObject heater;
 
     // Text fields to display resource numbers
     // Basic resources
@@ -28,7 +28,7 @@ public class InventoryScript : MonoBehaviour
 
     // Common resources
     private Text coal_resource_text;
-    private Text iron_ingot_resource_text;
+    private Text iron_ingot_resource_text; 
     private Text bucket_resource_text;
 
     // Technology resources
@@ -71,10 +71,12 @@ public class InventoryScript : MonoBehaviour
 
     public bool house_built = false;
     public bool oven_built = false;
+    public bool heater_built = false;
     public bool mine_built = false;
     public bool sawmill_built = false;
 
-    // Alchemy resources
+    // Refuel Menu
+    public GameObject refuelMenu;
 
     // Upgrades
     public bool oven_upgrade = false;
@@ -90,6 +92,7 @@ public class InventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        refuelMenu.SetActive(false);
         // Set all text fields
         // Basic resources 
         stone_resource_text = GameObject.Find("Stone Resource Text").GetComponent<Text>();
@@ -277,21 +280,6 @@ public class InventoryScript : MonoBehaviour
         }
     }
 
-    public void craftGarden()
-    {
-        // Required resources
-        const int required_water = 4;
-        const int required_wood = 4;
-
-        // Continue only if all requirements are met
-        if (water >= required_water && wood >= required_wood)
-        {
-            wood -= required_wood;
-            water -= required_water;
-            //TODO upgrade garden
-        }
-    }
-
     public void craftBasicHouse()
     {
         if(house_built)
@@ -367,6 +355,33 @@ public class InventoryScript : MonoBehaviour
     }
 
 
+    public void craftHeater()
+    {
+        if(heater_built)
+        {
+            return;
+        }
+
+        // Required resources
+        const int required_stone = 8;
+        const int required_iron_ingot = 8;
+        const int required_brass_ingot = 8;
+        const int required_steam_engine = 1;
+
+        if (iron_ingot >= required_iron_ingot && stone >= required_stone && brass_ingot >= required_brass_ingot && steam_engine >= required_steam_engine)
+        {
+            iron_ingot -= required_iron_ingot;
+            stone -= required_stone;
+            brass_ingot -= required_brass_ingot;
+            steam_engine -= required_steam_engine;
+
+            Instantiate(heater, new Vector3(-2.5f, 4.5f, 0), Quaternion.identity);
+        }
+
+        heater_built = true;
+    }
+
+
     public void craftTinIngot()
     {
         // Required resources
@@ -433,6 +448,25 @@ public class InventoryScript : MonoBehaviour
             water -= required_water;
             engine_fuel += 1;
         }
+    }
+
+    public void refuel()
+    {
+        // Required resources
+        const int required_fuel = 1;
+
+        FuelScript fuel_script = GameObject.Find("SteamHeater(Clone)").GetComponent<FuelScript>();
+        if(fuel_script.currentFuelTime <= fuel_script.maxFuelDuration - fuel_script.fuelDuration){
+            if (engine_fuel >= required_fuel)
+            {
+                fuel_script.currentFuelTime += fuel_script.fuelDuration;
+                engine_fuel -= 1;
+            }
+        }
+
+        
+
+        
     }
 
     public void addResource(string resource_name, int amount)

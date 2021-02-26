@@ -53,6 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        
         gm = GameObject.Find("GameManager");
         loadingBar.gameObject.SetActive(false);
         if (rigiBody == null) rigiBody = GetComponent<Rigidbody2D>();

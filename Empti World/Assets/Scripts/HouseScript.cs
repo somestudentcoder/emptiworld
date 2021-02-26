@@ -16,22 +16,28 @@ public class HouseScript : MonoBehaviour
 
     public void interact()
     {
-        GameObject player = GameObject.Find("Player");
+        PlayerScript player = GameObject.Find("Player").GetComponent<PlayerScript>();
         SoundEffectsHelperScript.Instance.playDoorSound();
 
-        if(player.GetComponent<PlayerScript>().inhouse)
+        if(player.inhouse)
         {
-            player.GetComponent<PlayerScript>().inhouse = false;
-            player.GetComponent<PlayerScript>().blocked = false;
-            player.GetComponent<PlayerScript>().heatDamageProne = true;
-            player.GetComponent<SpriteRenderer>().enabled = true;
+            player.inhouse = false;
+            player.blocked = false;
+            player.heatDamageProne = true;
+            player.coldDamageProne = true;
+            player.enabled = true;
         }
         else
         {
-            player.GetComponent<PlayerScript>().inhouse = true;
-            player.GetComponent<PlayerScript>().blocked = true;
-            player.GetComponent<PlayerScript>().heatDamageProne = false;
-            player.GetComponent<SpriteRenderer>().enabled = false;
+            player.inhouse = true;
+            player.blocked = true;
+            player.heatDamageProne = false;
+            if(GameObject.Find("Player").GetComponent<InventoryScript>().heater_built){
+                if( GameObject.Find("SteamHeater(Clone)").GetComponent<FuelScript>().currentFuelTime > 0){
+                    player.coldDamageProne = false;
+                }
+            }
+            player.enabled = false;
         }
         //TODO change house lightning when sprites are done
         /*
