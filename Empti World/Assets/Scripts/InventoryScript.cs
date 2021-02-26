@@ -375,7 +375,7 @@ public class InventoryScript : MonoBehaviour
             brass_ingot -= required_brass_ingot;
             steam_engine -= required_steam_engine;
 
-            Instantiate(heater, new Vector3(-2.5f, 4.5f, 0), Quaternion.identity);
+            Instantiate(heater, new Vector3(-2.5f, 1.3f, 0), Quaternion.identity);
         }
 
         heater_built = true;

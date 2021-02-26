@@ -6,16 +6,24 @@ using UnityEngine.UI;
 public class MonologueManagerScript : MonoBehaviour
 {
 	private Queue<string> content = new Queue<string>();
+	private Queue<Sprite> images = new Queue<Sprite>();
 	public bool active;
 	public Text contentDisplay;
+	private GameObject headshotDisplay;
 	public string currentContent;
 
     public void StartMonologue(Content monologue)
     {
+		headshotDisplay = GameObject.Find("Headshot");
     	active = true;
     	foreach(string sentence in monologue.content)
     	{
     		content.Enqueue(sentence);
+    	}
+
+		foreach(Sprite image in monologue.headshot)
+    	{
+    		images.Enqueue(image);
     	}
 
     	DisplayNextSentence();
@@ -38,6 +46,7 @@ public class MonologueManagerScript : MonoBehaviour
     	{
     		currentContent = content.Dequeue();
     		StopAllCoroutines();
+			headshotDisplay.GetComponent<Image>().sprite = images.Dequeue();
     		StartCoroutine(TypingSentence());
     	}
     }
@@ -64,4 +73,5 @@ public class MonologueManagerScript : MonoBehaviour
     	content.Clear();
     	GameObject.Find("Monologue").SetActive(false);
     }
+
 }
