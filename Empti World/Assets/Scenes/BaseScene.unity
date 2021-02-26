@@ -107599,6 +107599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 0
   contentDisplay: {fileID: 1932978832}
+  currentContent: 
 --- !u!114 &1973643026
 MonoBehaviour:
   m_ObjectHideFlags: 0
