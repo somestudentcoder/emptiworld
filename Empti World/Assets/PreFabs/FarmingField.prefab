@@ -161,7 +161,7 @@ MonoBehaviour:
     type: 3}
   crop: {fileID: 2981322447805243018, guid: 10fe796e048a599dabc661503cdcfb09, type: 3}
   actionTime: 2
-  growTime: 4
+  growTime: 30
   spriteArray:
   - sprites:
     - {fileID: -6833219676223801517, guid: 4f9f00a411fd7237d923d47d0c100332, type: 3}

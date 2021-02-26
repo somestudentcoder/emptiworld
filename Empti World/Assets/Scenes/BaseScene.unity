@@ -116362,7 +116362,7 @@ PrefabInstance:
     - target: {fileID: 7457472471424981268, guid: 07da75914901c5e48aae1323e27fa6a0,
         type: 3}
       propertyPath: hungerCoolDown
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07da75914901c5e48aae1323e27fa6a0, type: 3}
