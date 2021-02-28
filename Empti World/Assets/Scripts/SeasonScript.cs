@@ -185,11 +185,11 @@ public class SeasonScript : MonoBehaviour
     {
         if(active)
         {
-            //TODO
+            SoundEffectsHelperScript.Instance.playStormLoop();
         }
         else
         {
-            //TODO
+            SoundEffectsHelperScript.Instance.stopStormLoop();
         }
     }
 
