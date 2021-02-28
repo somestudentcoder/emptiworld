@@ -260,7 +260,7 @@ void Update()
         {
             stone -= required_stone;
             oven_upgrade = true;
-            Instantiate(oven, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(oven, new Vector3(-7, -2, 0), Quaternion.identity);
         }
         oven_built = true;
     }
