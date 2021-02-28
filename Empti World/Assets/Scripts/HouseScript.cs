@@ -25,7 +25,7 @@ public class HouseScript : MonoBehaviour
             player.blocked = false;
             player.heatDamageProne = true;
             player.coldDamageProne = true;
-            player.enabled = true;
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = true;
         }
         else
         {
@@ -37,7 +37,7 @@ public class HouseScript : MonoBehaviour
                     player.coldDamageProne = false;
                 }
             }
-            player.enabled = false;
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
         }
         //TODO change house lightning when sprites are done
         /*
