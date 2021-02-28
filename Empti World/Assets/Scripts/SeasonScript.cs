@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class SeasonScript : MonoBehaviour
 {
+    public bool debug;
+
     private ArrayList tilemaps = new ArrayList();
     public float SeasonCooldown;
     public float StormCooldown;
@@ -26,6 +28,12 @@ public class SeasonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (debug)
+        {
+            SeasonCooldown = 10;
+            StormCooldown = 3;
+        }
+
         SeasonTimers = new float[4];
         setTimers();
 
