@@ -117839,6 +117839,10 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1271950952, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: summer_warning.headshot.Array.size
       value: 1
@@ -117857,11 +117861,11 @@ PrefabInstance:
       objectReference: {fileID: 2774086206984507150}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown
-      value: 10
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: StormCooldown
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: summer_warning.headshot.Array.data[0]
@@ -117873,6 +117877,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 28403ccbef36e584e8934328da9b4bb8,
         type: 3}
+    - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5835231974117881058, guid: b38c38c1c30379545b0e0027be588d5b,
         type: 3}
       propertyPath: m_Name
