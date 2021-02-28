@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4029111602497619962}
   - component: {fileID: 1237793289959823821}
   m_Layer: 10
-  m_Name: Steam_Heater
+  m_Name: SteamHeater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,8 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca811907aa26959489886c801a347916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelDuration: 30
-  maxFuelDuration: 300
+  fuelDuration: 3
+  maxFuelDuration: 30
+  currentFuelTime: 0
 --- !u!61 &1237793289959823821
 BoxCollider2D:
   m_ObjectHideFlags: 0
