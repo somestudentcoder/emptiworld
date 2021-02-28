@@ -120,10 +120,10 @@ public class FarmingFieldScript : MonoBehaviour
 
     private void changeSprite()
     {
-    	Debug.Log("growing:" + growing);
-    	Debug.Log("done:" + done);
-    	Debug.Log("harvesting:" + harvesting);
-    	Debug.Log("planting:" + planting);
+    	//Debug.Log("growing:" + growing);
+    	//Debug.Log("done:" + done);
+    	//Debug.Log("harvesting:" + harvesting);
+    	//Debug.Log("planting:" + planting);
     	if(growing)
     	{
     		spriteRenderer.sprite = spriteArray[seasonScript.currentSeason].sprites[GROWING];
@@ -157,5 +157,9 @@ public class FarmingFieldScript : MonoBehaviour
     		player.blocked = true;
     		harvesting = true;
     	}
+        else
+        {
+            ply.loadingBar.gameObject.SetActive(false);
+        }
     }
 }
