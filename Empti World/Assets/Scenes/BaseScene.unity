@@ -100927,6 +100927,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132293925}
   m_CullTransparentMesh: 0
+--- !u!82 &1139873671 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1271950952, guid: b38c38c1c30379545b0e0027be588d5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8455334167393582438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1146676419
 GameObject:
   m_ObjectHideFlags: 0
@@ -117821,6 +117827,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 686920121, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: m_Pitch
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 686920121, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271950952, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: summer_warning.headshot.Array.size
       value: 1
@@ -117860,6 +117878,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6118384623585199635, guid: b38c38c1c30379545b0e0027be588d5b,
+        type: 3}
+      propertyPath: stormLoop
+      value: 
+      objectReference: {fileID: 1139873671}
     - target: {fileID: 9118555128225208497, guid: b38c38c1c30379545b0e0027be588d5b,
         type: 3}
       propertyPath: m_LocalPosition.x

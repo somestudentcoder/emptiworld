@@ -2,15 +2,9 @@
 using System.Collections;
 using System;
 
-/// <summary>
-/// Creating instance of sounds from code with no effort
-/// </summary>
 public class SoundEffectsHelperScript : MonoBehaviour
 {
-
-    /// <summary>
     /// Singleton
-    /// </summary>
     public static SoundEffectsHelperScript Instance;
 
     public AudioSource menuHoveredSound;
@@ -20,13 +14,12 @@ public class SoundEffectsHelperScript : MonoBehaviour
     public AudioSource lootSound;
     public AudioSource miningSound;
     public AudioSource playerHitSound;
-    public AudioSource stormSound;
+    public AudioSource stormLoop;
     public AudioSource woodCutSound;
     public AudioSource walkingLoop;
 
     void Awake()
     {
-        // Register the singleton
         if (Instance != null)
         {
             Debug.LogError("Multiple instances of MenuSoundEffectsHelper!");
@@ -68,19 +61,11 @@ public class SoundEffectsHelperScript : MonoBehaviour
     {
         MakeSound(playerHitSound);
     }
-    public void playStormSound()
-    {
-        MakeSound(stormSound);
-    }
     public void playWoodCutSound()
     {
         MakeSound(woodCutSound);
     }
 
-    /// <summary>
-    /// Play a given sound
-    /// </summary>
-    /// <param name="originalClip"></param>
     private void MakeSound(AudioSource originalClip)
     {
         AudioSource.PlayClipAtPoint(originalClip.clip, transform.position);
@@ -88,7 +73,6 @@ public class SoundEffectsHelperScript : MonoBehaviour
 
     internal void playWalkingLoop()
     {
-        //if (!walkingLoop.isActiveAndEnabled)
         if(!walkingLoop.isPlaying)
             walkingLoop.Play();
         
@@ -97,5 +81,16 @@ public class SoundEffectsHelperScript : MonoBehaviour
     internal void stopWalkingLoop()
     {
         walkingLoop.Stop();
+    }
+
+    internal void playStormLoop()
+    {
+        if (!stormLoop.isPlaying)
+            stormLoop.Play();
+    }
+
+    internal void stopStormLoop()
+    {
+        stormLoop.Stop();
     }
 }
