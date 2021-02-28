@@ -27,6 +27,9 @@ public class PlayerScript : MonoBehaviour
     private float regenTimer;
     public float hungerCoolDown;
     private float hungerTimer;
+    
+    public float introTimer;
+    private bool intro = true;
 
     public bool inhouse = false;
     public bool busy = false;
@@ -101,13 +104,24 @@ public class PlayerScript : MonoBehaviour
         movement = new Vector3(speed.x * inputX, speed.y * inputY, 0);
 
         //Hunger timer logic
-        hungerTimer -= Time.deltaTime;
-        if(hungerTimer <= 0)
+        if(intro)
         {
-            hunger(10);
-            hungerTimer = hungerCoolDown;
+            introTimer -= Time.deltaTime;
+            if(introTimer <= 0)
+            {
+                intro = false;
+            }
         }
-
+        else
+        {
+            hungerTimer -= Time.deltaTime;
+            if(hungerTimer <= 0)
+            {
+                hunger(10);
+                hungerTimer = hungerCoolDown;
+            }    
+        }
+        
         //Damage timer logic
         if(damageable == false)
         {

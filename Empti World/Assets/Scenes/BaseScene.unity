@@ -117734,6 +117734,11 @@ PrefabInstance:
       propertyPath: hungerCoolDown
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7457472471424981268, guid: 07da75914901c5e48aae1323e27fa6a0,
+        type: 3}
+      propertyPath: introTimer
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07da75914901c5e48aae1323e27fa6a0, type: 3}
 --- !u!1001 &8103477522275589115
@@ -117857,11 +117862,11 @@ PrefabInstance:
       objectReference: {fileID: 2774086206984507150}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: SeasonCooldown
-      value: 10
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: StormCooldown
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1521105892, guid: b38c38c1c30379545b0e0027be588d5b, type: 3}
       propertyPath: summer_warning.headshot.Array.data[0]
