@@ -50,4 +50,6 @@ public class FuelScript : MonoBehaviour
     {
         refuelMenu.SetActive(true);
     }
+
+    
 }

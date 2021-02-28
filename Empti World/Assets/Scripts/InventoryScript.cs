@@ -487,10 +487,10 @@ void Update()
                 engine_fuel -= 1;
             }
         }
+    }
 
-        
-
-        
+    public void hideRefuelMenu(){
+        refuelMenu.SetActive(false);
     }
 
     public void addResource(string resource_name, int amount)
