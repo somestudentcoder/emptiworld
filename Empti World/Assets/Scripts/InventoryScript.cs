@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ public class InventoryScript : MonoBehaviour
     private GameObject minimap;
     private GameObject minimapBorder;
 
+    public bool debug;
 
     public GameObject house;
     public GameObject oven;
@@ -92,6 +94,9 @@ public class InventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (debug)
+            addDebugRessources();
+
         refuelMenu.SetActive(false);
         // Set all text fields
         // Basic resources 
@@ -135,8 +140,27 @@ public class InventoryScript : MonoBehaviour
         menu.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void addDebugRessources()
+    {
+    stone = 99;
+    iron_ore = 99;
+    wood = 99;
+    water = 99;
+    crop = 99;
+    coal = 99;
+    iron_ingot = 99;
+    bucket = 99;
+    tin_ore = 99;
+    copper_ore = 99;
+    tin_ingot = 99;
+    copper_ingot = 99;
+    brass_ingot = 99;
+    steam_engine = 99;
+    engine_fuel = 99;
+}
+
+// Update is called once per frame
+void Update()
     {
         // Update all text fields
         // Basic resources 
