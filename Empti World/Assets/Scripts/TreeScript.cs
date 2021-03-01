@@ -87,6 +87,7 @@ public class TreeScript : MonoBehaviour
         if(regrowing)
         {
             ply.loadingBar.gameObject.SetActive(false);
+            ply.busy = false;
             return;
         }
         player = ply;

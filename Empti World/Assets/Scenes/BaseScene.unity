@@ -3076,8 +3076,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 160
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 53
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -3101,7 +3101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112550196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105144,7 +105144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showInventory: 0
-  debug: 1
+  debug: 0
   house: {fileID: 2928831153372248586, guid: 40bf6d64391ced14aacaaba43bbc33ad, type: 3}
   oven: {fileID: 2928831153372248586, guid: b8253361a8cb9694b8893d24a4e600ab, type: 3}
   mine: {fileID: 1791252856835748752, guid: 1e4c06395de11344ebde4868dfefd279, type: 3}

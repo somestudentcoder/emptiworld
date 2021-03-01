@@ -160,6 +160,7 @@ public class FarmingFieldScript : MonoBehaviour
         else
         {
             ply.loadingBar.gameObject.SetActive(false);
+            ply.busy = false;
         }
     }
 }
