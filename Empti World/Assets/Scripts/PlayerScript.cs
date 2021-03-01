@@ -19,6 +19,11 @@ public class PlayerScript : MonoBehaviour
     public float maxX;
     public float minY;
     public float maxY;
+    
+    public float miniMapMinX;
+    public float miniMapMaxX;
+    public float miniMapMinY;
+    public float miniMapMaxY;
 
     public bool damageable = true;
     public float damageCoolDown;
@@ -49,6 +54,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject gm;
     private Animator animator;
     private SpriteRenderer sprite;
+    public Camera miniMapCamera;
 
 
 
@@ -183,6 +189,21 @@ public class PlayerScript : MonoBehaviour
         else if (transform.position.y > minY + halfheight && transform.position.y < maxY - halfheight)
         {
             mainCamera.transform.position = new Vector3(mainCamera.transform.position[0], transform.position[1], mainCamera.transform.position[2]);
+        }
+        
+        //Minimap Camera Movement
+        if (transform.position.x > miniMapMinX + halfwidth && transform.position.x < miniMapMaxX - halfwidth && transform.position.y > miniMapMinY + halfheight && transform.position.y < miniMapMaxY - halfheight)
+        {
+            miniMapCamera.transform.position = new Vector3(transform.position[0], transform.position[1], miniMapCamera.transform.position[2]);
+        }
+        else if (transform.position.x > miniMapMinX + halfwidth && transform.position.x < miniMapMaxX - halfwidth)
+        {
+            miniMapCamera.transform.position = new Vector3(transform.position[0], miniMapCamera.transform.position[1], miniMapCamera.transform.position[2]);
+
+        }
+        else if (transform.position.y > miniMapMinX + halfheight && transform.position.y < miniMapMaxY - halfheight)
+        {
+            miniMapCamera.transform.position = new Vector3(miniMapCamera.transform.position[0], transform.position[1], miniMapCamera.transform.position[2]);
         }
     }
 

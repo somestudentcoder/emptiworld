@@ -126,11 +126,10 @@ public class InventoryScript : MonoBehaviour
 
         inventoryUI = GameObject.Find("Inventory");
         minimap = GameObject.Find("Minimap");
-        minimapBorder = GameObject.Find("MinimapBorder");
+        //minimapBorder = GameObject.Find("MinimapBorder");
 
         inventoryUI.gameObject.SetActive(false);
         minimap.gameObject.SetActive(true);
-        minimapBorder.gameObject.SetActive(true);
 
         //store monologue for displaying and hiding
         monologue = GameObject.Find("Monologue");
@@ -209,7 +208,7 @@ void Update()
             }
            
             minimap.gameObject.SetActive(!showInventory);
-            minimapBorder.gameObject.SetActive(!showInventory);
+            //minimapBorder.gameObject.SetActive(!showInventory);
             inventoryUI.gameObject.SetActive(showInventory);
 
             PlayerScript player = GetComponent<PlayerScript>();
