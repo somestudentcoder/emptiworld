@@ -95,6 +95,7 @@ public class FarmingFieldScript : MonoBehaviour
                 done = false;
                 changeSprite();
 	            player.blocked = false;
+	            player.busy = false;
 	            player = null;
 	            harvesting = false;
 	            Destroy(cropInstance);
