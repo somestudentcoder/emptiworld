@@ -261,8 +261,9 @@ void Update()
             stone -= required_stone;
             oven_upgrade = true;
             Instantiate(oven, new Vector3(-7, -2, 0), Quaternion.identity);
+            oven_built = true;
         }
-        oven_built = true;
+       
     }
 
     public void craftCoal()
@@ -325,9 +326,8 @@ void Update()
             wood -= required_wood;
 
             Instantiate(house, new Vector3(2, 5, 0), Quaternion.identity);
+            house_built = true;
         }
-
-        house_built = true;
     }
 
     public void craftMine()
@@ -349,9 +349,8 @@ void Update()
             wood -= required_wood;
 
             Instantiate(mine, new Vector3(20, 27, 0), Quaternion.identity);
+            mine_built = true;
         }
-
-        mine_built = true;
     }
 
     public void craftSawmill()
@@ -373,9 +372,8 @@ void Update()
             wood -= required_wood;
 
             Instantiate(sawmill, new Vector3(-44, 34, 0), Quaternion.identity);
+            sawmill_built = true;
         }
-
-        sawmill_built = true;
     }
 
 
@@ -400,9 +398,8 @@ void Update()
             steam_engine -= required_steam_engine;
 
             Instantiate(heater, new Vector3(-2.5f, 1.3f, 0), Quaternion.identity);
+            heater_built = true;
         }
-
-        heater_built = true;
     }
 
 
