@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 350b4986f9f2f8d61a809759feab345f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocked: 0
   loadingBar: {fileID: 0}
+  walkParticles: {fileID: 0}
   speed: {x: 10, y: 10}
   minX: -48.5
   maxX: 48.5
@@ -152,3 +153,10 @@ MonoBehaviour:
   maxY: 48.5
   damageable: 1
   damageCoolDown: 1
+  regenCoolDown: 0
+  hungerCoolDown: 0
+  introTimer: 0
+  inhouse: 0
+  busy: 0
+  heatDamageProne: 1
+  coldDamageProne: 1
